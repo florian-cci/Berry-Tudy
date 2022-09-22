@@ -1,0 +1,874 @@
+{
+  "backpack.auth.login": {
+    "name": "backpack.auth.login",
+    "domain": null,
+    "action": "Backpack\\CRUD\\app\\Http\\Controllers\\Auth\\LoginController@showLoginForm",
+    "uri": "admin/login",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "": {
+    "name": null,
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Auth\\ConfirmablePasswordController@store",
+    "uri": "confirm-password",
+    "method": [
+      "POST"
+    ]
+  },
+  "backpack.auth.logout": {
+    "name": "backpack.auth.logout",
+    "domain": null,
+    "action": "Backpack\\CRUD\\app\\Http\\Controllers\\Auth\\LoginController@logout",
+    "uri": "admin/logout",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "backpack.auth.register": {
+    "name": "backpack.auth.register",
+    "domain": null,
+    "action": "Backpack\\CRUD\\app\\Http\\Controllers\\Auth\\RegisterController@showRegistrationForm",
+    "uri": "admin/register",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "backpack.auth.password.reset": {
+    "name": "backpack.auth.password.reset",
+    "domain": null,
+    "action": "Backpack\\CRUD\\app\\Http\\Controllers\\Auth\\ForgotPasswordController@showLinkRequestForm",
+    "uri": "admin/password/reset",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "backpack.auth.password.reset.token": {
+    "name": "backpack.auth.password.reset.token",
+    "domain": null,
+    "action": "Backpack\\CRUD\\app\\Http\\Controllers\\Auth\\ResetPasswordController@showResetForm",
+    "uri": "admin/password/reset/{token}",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "backpack.auth.password.email": {
+    "name": "backpack.auth.password.email",
+    "domain": null,
+    "action": "Backpack\\CRUD\\app\\Http\\Controllers\\Auth\\ForgotPasswordController@sendResetLinkEmail",
+    "uri": "admin/password/email",
+    "method": [
+      "POST"
+    ]
+  },
+  "backpack.dashboard": {
+    "name": "backpack.dashboard",
+    "domain": null,
+    "action": "Backpack\\CRUD\\app\\Http\\Controllers\\AdminController@dashboard",
+    "uri": "admin/dashboard",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "backpack": {
+    "name": "backpack",
+    "domain": null,
+    "action": "Backpack\\CRUD\\app\\Http\\Controllers\\AdminController@redirect",
+    "uri": "admin",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "backpack.account.info": {
+    "name": "backpack.account.info",
+    "domain": null,
+    "action": "Backpack\\CRUD\\app\\Http\\Controllers\\MyAccountController@getAccountInfoForm",
+    "uri": "admin/edit-account-info",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "backpack.account.info.store": {
+    "name": "backpack.account.info.store",
+    "domain": null,
+    "action": "Backpack\\CRUD\\app\\Http\\Controllers\\MyAccountController@postAccountInfoForm",
+    "uri": "admin/edit-account-info",
+    "method": [
+      "POST"
+    ]
+  },
+  "backpack.account.password": {
+    "name": "backpack.account.password",
+    "domain": null,
+    "action": "Backpack\\CRUD\\app\\Http\\Controllers\\MyAccountController@postChangePasswordForm",
+    "uri": "admin/change-password",
+    "method": [
+      "POST"
+    ]
+  },
+  "user.index": {
+    "name": "user.index",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Admin\\UserCrudController@index",
+    "uri": "admin/user",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "user.search": {
+    "name": "user.search",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Admin\\UserCrudController@search",
+    "uri": "admin/user/search",
+    "method": [
+      "POST"
+    ]
+  },
+  "user.showDetailsRow": {
+    "name": "user.showDetailsRow",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Admin\\UserCrudController@showDetailsRow",
+    "uri": "admin/user/{id}/details",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "user.create": {
+    "name": "user.create",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Admin\\UserCrudController@create",
+    "uri": "admin/user/create",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "user.store": {
+    "name": "user.store",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Admin\\UserCrudController@store",
+    "uri": "admin/user",
+    "method": [
+      "POST"
+    ]
+  },
+  "user.edit": {
+    "name": "user.edit",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Admin\\UserCrudController@edit",
+    "uri": "admin/user/{id}/edit",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "user.update": {
+    "name": "user.update",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Admin\\UserCrudController@update",
+    "uri": "admin/user/{id}",
+    "method": [
+      "PUT"
+    ]
+  },
+  "user.destroy": {
+    "name": "user.destroy",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Admin\\UserCrudController@destroy",
+    "uri": "admin/user/{id}",
+    "method": [
+      "DELETE"
+    ]
+  },
+  "user.show": {
+    "name": "user.show",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Admin\\UserCrudController@show",
+    "uri": "admin/user/{id}/show",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "ville.index": {
+    "name": "ville.index",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Admin\\VilleCrudController@index",
+    "uri": "admin/ville",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "ville.search": {
+    "name": "ville.search",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Admin\\VilleCrudController@search",
+    "uri": "admin/ville/search",
+    "method": [
+      "POST"
+    ]
+  },
+  "ville.showDetailsRow": {
+    "name": "ville.showDetailsRow",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Admin\\VilleCrudController@showDetailsRow",
+    "uri": "admin/ville/{id}/details",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "ville.create": {
+    "name": "ville.create",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Admin\\VilleCrudController@create",
+    "uri": "admin/ville/create",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "ville.store": {
+    "name": "ville.store",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Admin\\VilleCrudController@store",
+    "uri": "admin/ville",
+    "method": [
+      "POST"
+    ]
+  },
+  "ville.edit": {
+    "name": "ville.edit",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Admin\\VilleCrudController@edit",
+    "uri": "admin/ville/{id}/edit",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "ville.update": {
+    "name": "ville.update",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Admin\\VilleCrudController@update",
+    "uri": "admin/ville/{id}",
+    "method": [
+      "PUT"
+    ]
+  },
+  "ville.destroy": {
+    "name": "ville.destroy",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Admin\\VilleCrudController@destroy",
+    "uri": "admin/ville/{id}",
+    "method": [
+      "DELETE"
+    ]
+  },
+  "ville.show": {
+    "name": "ville.show",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Admin\\VilleCrudController@show",
+    "uri": "admin/ville/{id}/show",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "pension.index": {
+    "name": "pension.index",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Admin\\PensionCrudController@index",
+    "uri": "admin/pension",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "pension.search": {
+    "name": "pension.search",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Admin\\PensionCrudController@search",
+    "uri": "admin/pension/search",
+    "method": [
+      "POST"
+    ]
+  },
+  "pension.showDetailsRow": {
+    "name": "pension.showDetailsRow",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Admin\\PensionCrudController@showDetailsRow",
+    "uri": "admin/pension/{id}/details",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "pension.create": {
+    "name": "pension.create",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Admin\\PensionCrudController@create",
+    "uri": "admin/pension/create",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "pension.store": {
+    "name": "pension.store",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Admin\\PensionCrudController@store",
+    "uri": "admin/pension",
+    "method": [
+      "POST"
+    ]
+  },
+  "pension.edit": {
+    "name": "pension.edit",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Admin\\PensionCrudController@edit",
+    "uri": "admin/pension/{id}/edit",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "pension.update": {
+    "name": "pension.update",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Admin\\PensionCrudController@update",
+    "uri": "admin/pension/{id}",
+    "method": [
+      "PUT"
+    ]
+  },
+  "pension.destroy": {
+    "name": "pension.destroy",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Admin\\PensionCrudController@destroy",
+    "uri": "admin/pension/{id}",
+    "method": [
+      "DELETE"
+    ]
+  },
+  "pension.show": {
+    "name": "pension.show",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Admin\\PensionCrudController@show",
+    "uri": "admin/pension/{id}/show",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "enfant.index": {
+    "name": "enfant.index",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\EnfantController@index",
+    "uri": "enfant",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "enfant.search": {
+    "name": "enfant.search",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Admin\\EnfantCrudController@search",
+    "uri": "admin/enfant/search",
+    "method": [
+      "POST"
+    ]
+  },
+  "enfant.showDetailsRow": {
+    "name": "enfant.showDetailsRow",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Admin\\EnfantCrudController@showDetailsRow",
+    "uri": "admin/enfant/{id}/details",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "enfant.create": {
+    "name": "enfant.create",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\EnfantController@create",
+    "uri": "enfant/create",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "enfant.store": {
+    "name": "enfant.store",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\EnfantController@store",
+    "uri": "enfant",
+    "method": [
+      "POST"
+    ]
+  },
+  "enfant.edit": {
+    "name": "enfant.edit",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\EnfantController@edit",
+    "uri": "enfant/{enfant}/edit",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "enfant.update": {
+    "name": "enfant.update",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\EnfantController@update",
+    "uri": "enfant/{enfant}",
+    "method": [
+      "PUT",
+      "PATCH"
+    ]
+  },
+  "enfant.destroy": {
+    "name": "enfant.destroy",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\EnfantController@destroy",
+    "uri": "enfant/{enfant}",
+    "method": [
+      "DELETE"
+    ]
+  },
+  "enfant.show": {
+    "name": "enfant.show",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\EnfantController@show",
+    "uri": "enfant/{enfant}",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "famille.index": {
+    "name": "famille.index",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\FamilleController@index",
+    "uri": "famille",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "famille.search": {
+    "name": "famille.search",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Admin\\FamilleCrudController@search",
+    "uri": "admin/famille/search",
+    "method": [
+      "POST"
+    ]
+  },
+  "famille.showDetailsRow": {
+    "name": "famille.showDetailsRow",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Admin\\FamilleCrudController@showDetailsRow",
+    "uri": "admin/famille/{id}/details",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "famille.create": {
+    "name": "famille.create",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\FamilleController@create",
+    "uri": "famille/create",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "famille.store": {
+    "name": "famille.store",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\FamilleController@store",
+    "uri": "famille",
+    "method": [
+      "POST"
+    ]
+  },
+  "famille.edit": {
+    "name": "famille.edit",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\FamilleController@edit",
+    "uri": "famille/{famille}/edit",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "famille.update": {
+    "name": "famille.update",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\FamilleController@update",
+    "uri": "famille/{famille}",
+    "method": [
+      "PUT",
+      "PATCH"
+    ]
+  },
+  "famille.destroy": {
+    "name": "famille.destroy",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\FamilleController@destroy",
+    "uri": "famille/{famille}",
+    "method": [
+      "DELETE"
+    ]
+  },
+  "famille.show": {
+    "name": "famille.show",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\FamilleController@show",
+    "uri": "famille/{famille}",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "sejour.index": {
+    "name": "sejour.index",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Admin\\SejourCrudController@index",
+    "uri": "admin/sejour",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "sejour.search": {
+    "name": "sejour.search",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Admin\\SejourCrudController@search",
+    "uri": "admin/sejour/search",
+    "method": [
+      "POST"
+    ]
+  },
+  "sejour.showDetailsRow": {
+    "name": "sejour.showDetailsRow",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Admin\\SejourCrudController@showDetailsRow",
+    "uri": "admin/sejour/{id}/details",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "sejour.create": {
+    "name": "sejour.create",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Admin\\SejourCrudController@create",
+    "uri": "admin/sejour/create",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "sejour.store": {
+    "name": "sejour.store",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Admin\\SejourCrudController@store",
+    "uri": "admin/sejour",
+    "method": [
+      "POST"
+    ]
+  },
+  "sejour.edit": {
+    "name": "sejour.edit",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Admin\\SejourCrudController@edit",
+    "uri": "admin/sejour/{id}/edit",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "sejour.update": {
+    "name": "sejour.update",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Admin\\SejourCrudController@update",
+    "uri": "admin/sejour/{id}",
+    "method": [
+      "PUT"
+    ]
+  },
+  "sejour.destroy": {
+    "name": "sejour.destroy",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Admin\\SejourCrudController@destroy",
+    "uri": "admin/sejour/{id}",
+    "method": [
+      "DELETE"
+    ]
+  },
+  "sejour.show": {
+    "name": "sejour.show",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Admin\\SejourCrudController@show",
+    "uri": "admin/sejour/{id}/show",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "ignition.healthCheck": {
+    "name": "ignition.healthCheck",
+    "domain": null,
+    "action": "Facade\\Ignition\\Http\\Controllers\\HealthCheckController",
+    "uri": "_ignition/health-check",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "ignition.executeSolution": {
+    "name": "ignition.executeSolution",
+    "domain": null,
+    "action": "Facade\\Ignition\\Http\\Controllers\\ExecuteSolutionController",
+    "uri": "_ignition/execute-solution",
+    "method": [
+      "POST"
+    ]
+  },
+  "ignition.shareReport": {
+    "name": "ignition.shareReport",
+    "domain": null,
+    "action": "Facade\\Ignition\\Http\\Controllers\\ShareReportController",
+    "uri": "_ignition/share-report",
+    "method": [
+      "POST"
+    ]
+  },
+  "ignition.scripts": {
+    "name": "ignition.scripts",
+    "domain": null,
+    "action": "Facade\\Ignition\\Http\\Controllers\\ScriptController",
+    "uri": "_ignition/scripts/{script}",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "ignition.styles": {
+    "name": "ignition.styles",
+    "domain": null,
+    "action": "Facade\\Ignition\\Http\\Controllers\\StyleController",
+    "uri": "_ignition/styles/{style}",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "cypress.factory": {
+    "name": "cypress.factory",
+    "domain": null,
+    "action": "Laracasts\\Cypress\\Controllers\\CypressController@factory",
+    "uri": "__cypress__/factory",
+    "method": [
+      "POST"
+    ]
+  },
+  "cypress.login": {
+    "name": "cypress.login",
+    "domain": null,
+    "action": "Laracasts\\Cypress\\Controllers\\CypressController@login",
+    "uri": "__cypress__/login",
+    "method": [
+      "POST"
+    ]
+  },
+  "cypress.logout": {
+    "name": "cypress.logout",
+    "domain": null,
+    "action": "Laracasts\\Cypress\\Controllers\\CypressController@logout",
+    "uri": "__cypress__/logout",
+    "method": [
+      "POST"
+    ]
+  },
+  "cypress.artisan": {
+    "name": "cypress.artisan",
+    "domain": null,
+    "action": "Laracasts\\Cypress\\Controllers\\CypressController@artisan",
+    "uri": "__cypress__/artisan",
+    "method": [
+      "POST"
+    ]
+  },
+  "cypress.run-php": {
+    "name": "cypress.run-php",
+    "domain": null,
+    "action": "Laracasts\\Cypress\\Controllers\\CypressController@runPhp",
+    "uri": "__cypress__/run-php",
+    "method": [
+      "POST"
+    ]
+  },
+  "cypress.csrf-token": {
+    "name": "cypress.csrf-token",
+    "domain": null,
+    "action": "Laracasts\\Cypress\\Controllers\\CypressController@csrfToken",
+    "uri": "__cypress__/csrf_token",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "cypress.routes": {
+    "name": "cypress.routes",
+    "domain": null,
+    "action": "Laracasts\\Cypress\\Controllers\\CypressController@routes",
+    "uri": "__cypress__/routes",
+    "method": [
+      "POST"
+    ]
+  },
+  "home": {
+    "name": "home",
+    "domain": null,
+    "action": "Closure",
+    "uri": "/",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "user.sejours": {
+    "name": "user.sejours",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\SejourController@index",
+    "uri": "sejour",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "register": {
+    "name": "register",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Auth\\RegisteredUserController@create",
+    "uri": "register",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "login": {
+    "name": "login",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Auth\\AuthenticatedSessionController@create",
+    "uri": "login",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "password.request": {
+    "name": "password.request",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Auth\\PasswordResetLinkController@create",
+    "uri": "forgot-password",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "password.email": {
+    "name": "password.email",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Auth\\PasswordResetLinkController@store",
+    "uri": "forgot-password",
+    "method": [
+      "POST"
+    ]
+  },
+  "password.reset": {
+    "name": "password.reset",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Auth\\NewPasswordController@create",
+    "uri": "reset-password/{token}",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "password.update": {
+    "name": "password.update",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Auth\\NewPasswordController@store",
+    "uri": "reset-password",
+    "method": [
+      "POST"
+    ]
+  },
+  "verification.notice": {
+    "name": "verification.notice",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Auth\\EmailVerificationPromptController@__invoke",
+    "uri": "verify-email",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "verification.verify": {
+    "name": "verification.verify",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Auth\\VerifyEmailController@__invoke",
+    "uri": "verify-email/{id}/{hash}",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "verification.send": {
+    "name": "verification.send",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Auth\\EmailVerificationNotificationController@store",
+    "uri": "email/verification-notification",
+    "method": [
+      "POST"
+    ]
+  },
+  "password.confirm": {
+    "name": "password.confirm",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Auth\\ConfirmablePasswordController@show",
+    "uri": "confirm-password",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "logout": {
+    "name": "logout",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\Auth\\AuthenticatedSessionController@destroy",
+    "uri": "logout",
+    "method": [
+      "POST"
+    ]
+  }
+}

@@ -1,6 +1,4 @@
-# Berry Tudy
- Berry Tudy Extranet
- # <center>Projet Extranet BerryTudy</center> <!-- omit in toc -->
+# <center>Projet Extranet BerryTudy</center> <!-- omit in toc -->
 <center>Auteur : Jules Hemery</center>
 
 
@@ -46,3 +44,4 @@ Le dashboard tente de détecter automatiquement les navigateurs installer sur la
 Si aucun navigateur n'est détecté ou que vous utilisez un navigateur custom (Brave, Opera...), Electron est proposé par défaut, sinon se référer à [ce guide](https://docs.cypress.io/api/plugins/configuration-api#Customize-available-browsers).
 
 Les tests réalisables sont listé dans le dashboard cypress.
+
