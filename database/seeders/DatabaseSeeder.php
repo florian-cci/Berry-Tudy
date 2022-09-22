@@ -6,6 +6,7 @@ use Illuminate\Database\Seeder;
 use Database\Seeders\UserSeeder;
 use Database\Seeders\VilleSeeder;
 use Database\Seeders\SejourSeeder;
+use Database\Seeders\DepartementSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -21,6 +22,7 @@ class DatabaseSeeder extends Seeder
         SejourSeeder::class,
         PensionSeeder::class,
 				UserSeeder::class,
+				DepartementSeeder::class,
     ]);
     }
 }

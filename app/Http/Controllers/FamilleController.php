@@ -26,6 +26,16 @@ class FamilleController extends Controller
 		$sejours = Sejour::where('Sejour_Type', 'Famille')->get();
 		return view('famille', compact('sejours','pensionDemi','pensionComplete','pensionNuit','pensionRepas','user'));
     }
+    public function tarif()
+    {
+      $user = Auth::user();
+		$pensionDemi = Pension::where('Pension_Type', 'Demi')->first();
+		$pensionComplete = Pension::where('Pension_Type', 'Complete')->first();
+		$pensionNuit = Pension::where('Pension_Type', 'Nuit')->first();
+		$pensionRepas = Pension::where('Pension_Type', 'Repas')->first();
+		$sejours = Sejour::where('Sejour_Type', 'Famille')->get();
+		return view('tarif', compact('sejours','pensionDemi','pensionComplete','pensionNuit','pensionRepas','user'));
+    }
 
     /**
      * Show the form for creating a new resource.

@@ -7,3 +7,18 @@ input[type="number"]{
 /* .navbar {
 	height: 100px;
 } */
+
+.sexlabel {
+	margin-left: -207px;
+}
+@media(max-width: 975px) {
+	.sexlabel {
+		margin-left: -207px;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.sexlabel {
+		margin-left: -295px;
+	}
+}

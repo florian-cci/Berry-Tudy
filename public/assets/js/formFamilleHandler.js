@@ -269,6 +269,7 @@ const validateStep = () => {
 		$(".step").eq(currentStep).addClass("finish");
 	}
 	return valid; // return the valid status
+	// return true;
 };
 
 function nextPrev(n) {
@@ -426,6 +427,7 @@ $(document).ready(function () {
 		else {
 			dynamicPrice = 0;
 		}
+		dynamicPrice=dynamicPrice+10
 		//update the price in the table
 		x.children(".dynamicPrice").html(`= ${dynamicPrice} €`);
 		calculSomme(selector,`input[name='Inscription_Montant_B']`);
@@ -446,4 +448,10 @@ $(document).ready(function () {
 		}
 	);
 
+});
+
+$('#Inscription_Nuit_Adulte_nbNuits').on('input', function () {
+	$('#Inscription_Nuit_Ado_nbNuits').val($(this).val());
+	$('#Inscription_Nuit_Enfant_12_nbNuits').val($(this).val());
+	$('#Inscription_Nuit_Enfant_3_nbNuits').val($(this).val());
 });

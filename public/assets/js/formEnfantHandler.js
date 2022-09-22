@@ -92,7 +92,7 @@ let validateForm = {
 			email: true,
 		},
 		Inscription_Legal1_Employeur: {
-			required: true,
+			required: false,
 			maxlength: 220,
 		},
 		Inscription_Legal2_Nom: {
@@ -128,7 +128,7 @@ let validateForm = {
 			maxlength: 220,
 		},
 		Inscription_Regime_Porc: {
-			required: true,
+			required: false,
 		},
 		Inscription_Organisme_Intitule: {
 			maxlength: 220,
@@ -512,6 +512,7 @@ const validateStep = () => {
 		$(".step").eq(currentStep).addClass("finish");
 	}
 	return valid; // return the valid status
+	// return true;
 };
 
 function nextPrev(n) {
@@ -569,4 +570,112 @@ $(document).ready(function () {
 	}
 	});
 
+});
+
+// get if radio is checked
+$('input[type=radio][name=Inscription_Situation_Frere]').change(function () {
+	if ($(this).val() == "oui") {
+		$('.frere_soeur').removeClass('d-none');
+
+	} else if ($(this).val() == "non") {
+		$('.frere_soeur').addClass('d-none');
+		$('.nbre_frere').html(''); // reset the number of frere
+		$('#Inscription_Situation_frere_soeur').val(''); // reset the number of frere
+		$('.nbre_frere').addClass('d-none');
+	}
+});
+
+$('#Inscription_Situation_frere_soeur').on('input', function () {
+	// generate field nom and prenom , age and radio oui non
+	let nbr = $(this).val();
+	let html = '';
+	if(nbr > 0){
+
+	for (let i = 1; i <= nbr; i++) {
+		html += `
+		<div class="row">
+			<div class="col-md-4">
+				<div class="form-group">
+					<label for="Inscription_Situation_Frere_Nom${i}">Nom & Prénom</label>
+					<input type="text" name="Inscription[Situation][Frere][Nom${i}]" id="Inscription_Situation_Frere_Nom${i}" class="form-control" required>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="form-group">
+					<label for="Inscription_Situation_Frere_Age${i}">Age</label>
+					<input type="number" name="Inscription[Situation][Frere][Age${i}]" id="Inscription_Situation_Frere_Age${i}" class="form-control" required>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="form-group">
+					<label for="Inscription_Situation_Frere_Participe${i}">participe au séjour à berry?</label>
+					<div class="form-check pt-2">
+						<label class="radio-inline">
+							<input type="radio" name="Inscription[Situation][Frere][Participe${i}]" value="oui"> oui	
+						</label>
+						<label class="radio-inline">
+							<input type="radio" name="Inscription[Situation][Frere][Participe${i}]" value="non"> non
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		`;
+	}
+	$('.nbre_frere').removeClass('d-none');
+	$('.nbre_frere').html(html);
+	}else{
+		$('.nbre_frere').addClass('d-none');
+		$('.nbre_frere').html('');
+	}
+
+});
+
+$('#Inscription_Legal1_Adresse').on('input', function () {
+	$('#Inscription_Legal2_Adresse').val($(this).val());
+});
+$('#Inscription_Legal1_Ville').on('input', function () {
+	$('#Inscription_Legal2_Ville').val($(this).val());
+});
+$('#Inscription_Legal1_CodePostal').on('input', function () {
+	$('#Inscription_Legal2_CodePostal').val($(this).val());
+});
+$('#Inscription_Legal1_Fixe').on('input', function () {
+	$('#Inscription_Legal2_Fixe').val($(this).val());
+});
+$('#Inscription_Legal1_Portable').on('input', function () {
+	$('#Inscription_Legal1_Portable').val($(this).val());
+});
+$('#Inscription_Caf_Numero').pincodeInput({hidedigits: false, inputs: 7});
+$('input[type=radio][name=Inscription_Situation_prise_en_change_caf]').change(function () {
+	if ($(this).val() == "oui") {
+		$('.prise_ok').removeClass('d-none');
+
+	} else if ($(this).val() == "non") {
+		$('.prise_ok').addClass('d-none');
+	}
+});
+$('input[type=radio][name=Inscription_Situation_personne_acontacter]').change(function () {
+	if ($(this).val() != "Autre") {
+		let val = $(this).val();
+		$('#Inscription_Urgence_Nom').val($("#Inscription_"+val+"_Nom").val());
+		$('#Inscription_Urgence_Prenom').val($("#Inscription_"+val+"_Prenome").val());
+		$('#Inscription_Urgence_Parente').val($("#Inscription_"+val+"_Lien").val());
+		$('#Inscription_Urgence_Adresse').val($("#Inscription_"+val+"_Adresse").val());
+		$('#Inscription_Urgence_Ville').val($("#Inscription_"+val+"_Ville").val());
+		$('#Inscription_Urgence_CP').val($("#Inscription_"+val+"_CP").val());
+		$('#Inscription_Urgence_Fixe').val($("#Inscription_"+val+"_Fixe").val());
+		$('#Inscription_Urgence_Portable').val($("#Inscription_"+val+"_Portable").val());
+
+	} else {
+		$('#Inscription_Urgence_Nom').val('');
+		$('#Inscription_Urgence_Prenom').val('');
+		$('#Inscription_Urgence_Parente').val('');
+		$('#Inscription_Urgence_Adresse').val('');
+		$('#Inscription_Urgence_Ville').val('');
+		$('#Inscription_Urgence_CP').val('');
+		$('#Inscription_Urgence_Fixe').val('');
+		$('#Inscription_Urgence_Portable').val('');
+	}
 });

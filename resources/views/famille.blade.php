@@ -88,8 +88,7 @@
                 <fieldset class="step">
                     <legend class="text-center fs-2">Choisissez votre séjours</legend>
                     <div class="table-responsive">
-                        <table class='table table-striped'>
-                            <caption>Prix des séjours/préstations</caption>
+                        <table class='table table-striped text-center'>
                             <thead>
                                 <tr>
                                     <th scope="col">Prix semaine / prestations</th>
@@ -101,18 +100,11 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <th scope="row">Enfant de 3 ans et plus</th>
-                                    <td>Gratuit</td>
-                                    <td>Gratuit</td>
-                                    <td>Gratuit</td>
-                                    <td>Gratuit</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Enfant de 4 à 11 ans</th>
-                                    <td>{{ $pensionDemi->Prix_Enfant }} €</td>
-                                    <td>{{ $pensionComplete->Prix_Enfant }} €</td>
-                                    <td>{{ $pensionNuit->Prix_Enfant }} €</td>
-                                    <td>{{ $pensionRepas->Prix_Enfant }} €</td>
+                                    <th scope="row">Adulte (à partir de 17 ans)</th>
+                                    <td>{{ $pensionDemi->Prix_Adulte }} €</td>
+                                    <td>{{ $pensionComplete->Prix_Adulte }} €</td>
+                                    <td>{{ $pensionNuit->Prix_Adulte }} €</td>
+                                    <td>{{ $pensionRepas->Prix_Adulte }} €</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Enfant de 12 à 16 ans</th>
@@ -122,12 +114,22 @@
                                     <td>{{ $pensionRepas->Prix_Ado }} €</td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">Adulte (à partir de 17 ans)</th>
-                                    <td>{{ $pensionDemi->Prix_Adulte }} €</td>
-                                    <td>{{ $pensionComplete->Prix_Adulte }} €</td>
-                                    <td>{{ $pensionNuit->Prix_Adulte }} €</td>
-                                    <td>{{ $pensionRepas->Prix_Adulte }} €</td>
+                                    <th scope="row">Enfant de 4 à 11 ans</th>
+                                    <td>{{ $pensionDemi->Prix_Enfant }} €</td>
+                                    <td>{{ $pensionComplete->Prix_Enfant }} €</td>
+                                    <td>{{ $pensionNuit->Prix_Enfant }} €</td>
+                                    <td>{{ $pensionRepas->Prix_Enfant }} €</td>
                                 </tr>
+                                <tr>
+                                    <th scope="row"> Enfants de 3 ans et moins</th>
+                                    <td>Gratuit</td>
+                                    <td>Gratuit</td>
+                                    <td>Gratuit</td>
+                                    <td>Gratuit</td>
+                                </tr>
+                                
+                                
+                               
                             </tbody>
                         </table>
                     </div>
@@ -225,17 +227,17 @@
                         </div>
                     </div>
                     <div class="row border-bottom border-bottom-2">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item text-center">Service animation gratuit</li>
-                            <li class="list-group-item text-center">Possibilité de prendre le repas du midi pour 9
+                        <ul class="">
+                            <li > Service animation gratuit</li>
+                            <li > Possibilité de prendre le repas du midi pour 9
                                 €/adulte et 5 €/enfant (hors pension
                                 complète)</li>
-                            <li class="list-group-item text-center">Repas du midi au choix sous forme de pique-nique ou à
+                            <li > Repas du midi au choix sous forme de pique-nique ou à
                                 table</li>
-                            <li class="list-group-item text-center">Possibilité de demander une navette pour faire
+                            <li > Possibilité de demander une navette pour faire
                                 l’aller-retour Quimper-Ile Tudy (24 €)
                             </li>
-                            <li class="list-group-item text-center">Possibilité de prolonger le séjour (avant ou après), ne
+                            <li > Possibilité de prolonger le séjour (avant ou après), ne
                                 passer que quelques jours ou inviter
                                 des amis en réservant les nuitées (ci-dessus – séjour à la carte) sous réserve des places
                                 disponibles en sachent que les repas pris sur place (midi ou soir) seront facturés en fin de
@@ -261,7 +263,7 @@
                             <tbody>
                                 <tr>
                                     <th>Adulte</th>
-                                    <td class='nbPers'><input type='number' min=0 id='Inscription_Semaine_Demi_Adulte_nb'
+                                    <td class='nbPers text-center'><input type='number' style="width: 30%" min=0 id='Inscription_Semaine_Demi_Adulte_nb'
                                             name='Inscription_Semaine_Demi_Adulte_nb'></td>
                                     <th>X</th>
                                     <td class='price'>{{ $pensionDemi->Prix_Adulte }}</td>
@@ -269,7 +271,7 @@
                                 </tr>
                                 <tr>
                                     <th>Ados 12 à 16 ans</th>
-                                    <td class='nbPers'><input type='number' min=0 id='Inscription_Semaine_Demi_Ado_nb'
+                                    <td class='nbPers text-center'><input type='number' style="width: 30%" min=0 id='Inscription_Semaine_Demi_Ado_nb'
                                             name='Inscription_Semaine_Demi_Ado_nb'>
                                     </td>
                                     <th>X</th>
@@ -278,7 +280,7 @@
                                 </tr>
                                 <tr>
                                     <th>Enfant (<12 ans)</th>
-                                    <td class='nbPers'><input type='number' min=0 id='Inscription_Semaine_Demi_Enfant_12_nb'
+                                    <td class='nbPers text-center'><input type='number' style="width: 30%" min=0 id='Inscription_Semaine_Demi_Enfant_12_nb'
                                             name='Inscription_Semaine_Demi_Enfant_12_nb'></td>
                                     <th>X</th>
                                     <td class='price'>{{ $pensionDemi->Prix_Enfant }}</td>
@@ -286,7 +288,7 @@
                                 </tr>
                                 <tr>
                                     <th>Enfant (<3 ans)</th>
-                                    <td class='nbPers'><input type='number' min=0 id='Inscription_Semaine_Demi_Enfant_3_nb'
+                                    <td class='nbPers text-center'><input type='number' style="width: 30%" min=0 id='Inscription_Semaine_Demi_Enfant_3_nb'
                                             name='Inscription_Semaine_Demi_Enfant_3_nb'></td>
                                     <th colspan="2" class="text-center">GRATUIT</th>
                                     <td>= 0 €</td>
@@ -314,7 +316,7 @@
                             <tbody>
                                 <tr>
                                     <th>Adulte</th>
-                                    <td class='nbPers'><input type='number' min=0
+                                    <td class='nbPers text-center'><input type='number' style="width: 30%" min=0
                                             id='Inscription_Semaine_Complete_Adulte_nb'
                                             name='Inscription_Semaine_Complete_Adulte_nb'></td>
                                     <th>X</th>
@@ -323,7 +325,7 @@
                                 </tr>
                                 <tr>
                                     <th>Ados 12 à 16 ans</th>
-                                    <td class='nbPers'><input type='number' min=0 id='Inscription_Semaine_Complete_Ado_nb'
+                                    <td class='nbPers text-center'><input type='number' style="width: 30%" min=0 id='Inscription_Semaine_Complete_Ado_nb'
                                             name='Inscription_Semaine_Complete_Ado_nb'>
                                     </td>
                                     <th>X</th>
@@ -332,7 +334,7 @@
                                 </tr>
                                 <tr>
                                     <th>Enfant (<12 ans)</th>
-                                    <td class='nbPers'><input type='number' min=0
+                                    <td class='nbPers text-center'><input type='number' style="width: 30%" min=0
                                             id='Inscription_Semaine_Complete_Enfant_12_nb'
                                             name='Inscription_Semaine_Complete_Enfant_12_nb'></td>
                                     <th>X</th>
@@ -341,7 +343,7 @@
                                 </tr>
                                 <tr>
                                     <th>Enfant (<3 ans)</th>
-                                    <td class='nbPers'><input type='number' min=0
+                                    <td class='nbPers text-center'><input type='number' style="width: 30%" min=0
                                             id='Inscription_Semaine_Complete_Enfant_3_nb'
                                             name='Inscription_Semaine_Complete_Enfant_3_nb'></td>
                                     <th colspan="2" class="text-center">GRATUIT</th>
@@ -363,6 +365,10 @@
                                 <th scope="col" colspan="6" class='text-center'>Séjour à la carte(en fonction du nombre de
                                     nuitée)</th>
                             </thead>
+                            <Thead>
+                                <th scope="col" colspan="3" ><strong>Date de début</strong>: <input type="date" name="start_date" class="form-control" id="start_date"></th> 
+                                <th scope="col" colspan="3" ><strong>Date de fin</strong>: <input type="date" name="start_date" class="form-control" id="start_date"></th>
+                            </Thead>
                             <thead>
                                 <th scope="col" colspan='2'>Nombre de participants<span class="text-danger">*</span>
                                 </th>
@@ -373,47 +379,60 @@
                             <tbody>
                                 <tr>
                                     <th>Adulte</th>
-                                    <td class='nbPers'><input type='number' min=0 id='Inscription_Nuit_Adulte_nb'
+                                    <td class='nbPers text-center'><input type='number'style="width: 30%" min=0 id='Inscription_Nuit_Adulte_nb'
                                             name='Inscription_Nuit_Adulte_nb'></td>
                                     <th>X</th>
-                                    <td class='nbNuits'><input type='number' min=0 id='Inscription_Nuit_Adulte_nbNuits'
+                                    <td class='nbNuits text-center'><input type='number' style="width: 30%" min=0 id='Inscription_Nuit_Adulte_nbNuits'
                                             name='Inscription_Nuit_Adulte_nbNuits'></td>
                                     <td class='price'>{{ $pensionNuit->Prix_Adulte }}</td>
                                     <td class="dynamicPrice">= 0 €</td>
                                 </tr>
                                 <tr>
                                     <th>Ados 12 à 16 ans</th>
-                                    <td class='nbPers'><input type='number' min=0 id='Inscription_Nuit_Ado_nb'
+                                    <td class='nbPers text-center'><input type='number' style="width: 30%" min=0 id='Inscription_Nuit_Ado_nb'
                                             name='Inscription_Nuit_Ado_nb'>
                                     </td>
                                     <th>X</th>
-                                    <td class='nbNuits'><input type='number' min=0 id='Inscription_Nuit_Ado_nbNuits'
+                                    <td class='nbNuits text-center'><input type='number' style="width: 30%" min=0 id='Inscription_Nuit_Ado_nbNuits'
                                             name='Inscription_Nuit_Ado_nbNuits'></td>
                                     <td class='price'>{{ $pensionNuit->Prix_Ado }}</td>
                                     <td class="dynamicPrice">= 0 €</td>
                                 </tr>
                                 <tr>
-                                    <th>Enfant (<12 ans)</th>
-                                    <td class='nbPers'><input type='number' min=0 id='Inscription_Nuit_Enfant_12_nb'
+                                    <th>Enfant (< 12 ans)</th>
+                                    <td class='nbPers text-center'><input type='number' style="width: 30%" min=0 id='Inscription_Nuit_Enfant_12_nb'
                                             name='Inscription_Nuit_Enfant_12_nb'></td>
                                     <th>X</th>
-                                    <td class='nbNuits'><input type='number' min=0 id='Inscription_Nuit_Enfant_12_nbNuits'
+                                    <td class='nbNuits text-center'><input type='number' style="width: 30%" min=0 id='Inscription_Nuit_Enfant_12_nbNuits'
                                             name='Inscription_Nuit_Enfant_12_nbNuits'></td>
                                     <td class='price'>{{ $pensionNuit->Prix_Enfant }}</td>
                                     <td class="dynamicPrice">= 0 €</td>
                                 </tr>
                                 <tr>
-                                    <th>Enfant (<3 ans)</th>
-                                    <td class='nbPers'><input type='number' min=0 id='Inscription_Nuit_Enfant_3_nb'
+                                    <th>Enfant (< 3 ans)</th>
+                                    <td class='nbPers text-center'><input type='number' style="width: 30%" min=0 id='Inscription_Nuit_Enfant_3_nb'
                                             name='Inscription_Nuit_Enfant_3_nb'></td>
                                     <th>X</th>
-                                    <td class='nbNuits'><input type='number' min=0 id='Inscription_Nuit_Enfant_3_nbNuits'
+                                    <td class='nbNuits text-center'><input type='number'style="width: 30%" min=0 id='Inscription_Nuit_Enfant_3_nbNuits'
                                             name='Inscription_Nuit_Enfant_3_nbNuits'></td>
                                     <th class="text-center">GRATUIT</th>
                                     <td>= 0 €</td>
                                 </tr>
                             </tbody>
                             <tfoot>
+                                <tr>
+                                    <th colspan="5" class="text-end">Montant de l’acompte</th>
+                                    <th> 10€</th>
+                                </tr>
+                                <tr>
+                                    <th colspan="5" class="text-end">Pourcentage de l’acompte pour chaque séjour (%)</th>
+                                    <th> <input type='number' style="width: 30%" min=0 id='Montant_l_acompte'
+                                        name='Montant_l_acompte'></th>
+                                </tr>
+                                <tr>
+                                    <th colspan="5" class="text-end">Souhaitez-vous être pris en charge à votre arrivée à Quimper (+25€)</th>
+                                    <th> <input type="checkbox" name="pris-charge-Quimper" id="pris-charge-Quimper" value="oui"></th>
+                                </tr>
                                 <tr>
                                     <th colspan="5" class="text-end">Total B :</th>
                                     <th class="sum"></th>
@@ -448,4 +467,25 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js'></script>
     {{-- custom Js --}}
     <script src="./assets/js/formFamilleHandler.js"></script>
+    <script>
+        $('.pensionType').change(function () {
+            console.log(this.value);
+            window.open('{{ route("tarif") }}','_blank');
+        });
+         $('#pris-charge-Quimper').change(function () {
+            // get is checked
+            var isChecked = $(this).is(':checked');
+            // get the total
+            var total = $('#total').text();
+            // if checked add 25€
+            if (isChecked) {
+                total = parseInt(total) + 25;
+            } else {
+                total = parseInt(total) - 25;
+            }
+            // set the total
+            $('#total').text(total);
+        });
+
+    </script>
 @endsection

@@ -6,3 +6,5 @@
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('pension') }}'><i class='nav-icon la la-bed'></i> Pensions</a></li>
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('ville') }}'><i class='nav-icon la la-building'></i> Villes</a></li>
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('user') }}'><i class='nav-icon la la-user'></i> Utilisateurs</a></li>
+
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('departement') }}'><i class='nav-icon la la-question'></i> Departements</a></li>
