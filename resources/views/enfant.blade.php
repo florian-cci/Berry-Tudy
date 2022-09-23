@@ -10,7 +10,7 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css"
         integrity="sha512-Fppbdpv9QhevzDE+UHmdxL4HoW8HantO+rC8oQB2hCofV+dWV2hePnP5SgiWR1Y1vbJeYONZfzQc5iII6sID2Q=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-pincode-input.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-pincode-input.css') }}">
 @endsection
 
 @section('content')
@@ -18,7 +18,7 @@
     <div class="row justify-content-center">
         <div class='col-lg-6 col-md-8 col-10'>
 
-            <form action="./inscription" method="POST" id='inscriptionForm'>
+            <form action="{{ route('enfant.store') }}" method="POST" id='inscriptionForm'>
                 @csrf
                 <input type='hidden' name='Inscription_User_ID' value='{{ $user->id }}'>
                 {{-- Etape 1 (Info sur l'enfant) --}}
@@ -178,29 +178,30 @@
                         <div class='col form-group'>
                             <label class='form-label' for="Inscription_Situation_Ecole">Ecole fréquentée<span
                                     class="text-danger">*</span></label>
-                            <input class='form-control' type='text' name="Inscription_Situation_Ecole" placeholder="Ecole"
-                                id="Inscription_Situation_Ecole" required>
+                            <input class='form-control' type='text' name="Inscription_Situation_Ecole"
+                                placeholder="Ecole" id="Inscription_Situation_Ecole" required>
                         </div>
 
                         <div class='col form-group'>
                             <label class='form-label' for="Inscription_Situation_Ville_Ecole">Ville de l'école<span
                                     class="text-danger">*</span></label>
-                            <input class='form-control' type='text' name="Inscription_Situation_Ville_Ecole" placeholder="Ville de l'école"
-                                id="Inscription_Situation_Ville_Ecole" required>
+                            <input class='form-control' type='text' name="Inscription_Situation_Ville_Ecole"
+                                placeholder="Ville de l'école" id="Inscription_Situation_Ville_Ecole" required>
                         </div>
 
                         <div class='col form-group'>
                             <label class='form-label' for="Inscription_Situation_Classe">Classe<span
                                     class="text-danger">*</span></label>
-                                    <select class='form-control' name="Inscription_Situation_Classe" id="Inscription_Situation_Classe">
-                                        <option value="Maternelle">Maternelle</option>
-                                        <option value="CP">CP</option>
-                                        <option value="CE1">CE1</option>
-                                        <option value="CE2">CE2</option>
-                                        <option value="CM1">CM1</option>
-                                        <option value="CM2">CM2</option>
-                                        <option value="Collège">Collège</option>
-                                    </select>
+                            <select class='form-control' name="Inscription_Situation_Classe"
+                                id="Inscription_Situation_Classe">
+                                <option value="Maternelle">Maternelle</option>
+                                <option value="CP">CP</option>
+                                <option value="CE1">CE1</option>
+                                <option value="CE2">CE2</option>
+                                <option value="CM1">CM1</option>
+                                <option value="CM2">CM2</option>
+                                <option value="Collège">Collège</option>
+                            </select>
                         </div>
                     </div>
                     <hr>
@@ -233,18 +234,19 @@
                     </div>
                     <div class="row form-group frere_soeur d-none">
                         <div class="col">
-                            <label class='form-label align-items-center' for="Inscription_Situation_frere_soeur">Combien frères et soeurs ?<span class="text-danger">*</span></label>
-                            <input class='form-control' type='text' name="Inscription_Situation_frere_soeur" placeholder="Nombre de frères et soeurs"
-                                id="Inscription_Situation_frere_soeur" >
+                            <label class='form-label align-items-center' for="Inscription_Situation_frere_soeur">Combien
+                                frères et soeurs ?<span class="text-danger">*</span></label>
+                            <input class='form-control' type='text' name="Inscription_Situation_frere_soeur"
+                                placeholder="Nombre de frères et soeurs" id="Inscription_Situation_frere_soeur">
                         </div>
-                        
+
                     </div>
 
                     <div class='form-group nbre_frere d-none mt-2'>
                         <label class='form-label' for="Inscription_Situation_Frere_Description">Si oui, veuillez
                             indiquer leurs prénoms , âges et indiquer si participe au séjour à berry
                             tudy</label>
-                            
+
                     </div>
 
                     <div class='form-group mt-2'>
@@ -310,13 +312,17 @@
                         <label class='form-label' for="Inscription_Groupe">Votre enfant souhaite être avec des
                             enfants de sa connaissance pour le voyage et/ou dans le même groupe
                             durant le séjour (en fonction de l’âge) ; merci de nous l’indiquer ici :</label>
-                        <textarea class='form-control' name='Inscription_Groupe' id='Inscription_Groupe' placeholder="Veuillez nous indiquer avec qui vous
-                        souhaitez que votre enfant voyage à l’aller" rows='4'></textarea>
+                        <textarea class='form-control' name='Inscription_Groupe' id='Inscription_Groupe'
+                            placeholder="Veuillez nous indiquer avec qui vous
+                        souhaitez que votre enfant voyage à l’aller"
+                            rows='4'></textarea>
                     </div>
                     <hr>
                     <div class='form-group'>
-                        <label class='form-label' for="Inscription_Groupe">Avec quels autres enfants souhaitent t’il effectuer le séjour?</label>
-                        <textarea class='form-control' name='Inscription_autre_enfant' id='Inscription_autre_enfant' placeholder="Autres enfants" rows='4'></textarea>
+                        <label class='form-label' for="Inscription_Groupe">Avec quels autres enfants souhaitent t’il
+                            effectuer le séjour?</label>
+                        <textarea class='form-control' name='Inscription_autre_enfant' id='Inscription_autre_enfant'
+                            placeholder="Autres enfants" rows='4'></textarea>
                     </div>
 
                 </fieldset>
@@ -345,23 +351,23 @@
                     <div class='form-group'>
                         <label class="form-label" for="Inscription_Legal1_Lien">Lien de parenté<span
                                 class="text-danger">*</span></label>
-                        <input class='form-control' type="text" name="Inscription_Legal1_Lien" placeholder="Lien de parenté"
-                            id="Inscription_Legal1_Lien" required>
+                        <input class='form-control' type="text" name="Inscription_Legal1_Lien"
+                            placeholder="Lien de parenté" id="Inscription_Legal1_Lien" required>
                     </div>
 
                     <div class='form-group'>
                         <label class="form-label" for="Inscription_Legal1_Adresse">Adresse<span
                                 class="text-danger">*</span></label>
-                        <input class='form-control' type="text" name="Inscription_Legal1_Adresse" placeholder="Adresse"
-                            id="Inscription_Legal1_Adresse" required>
+                        <input class='form-control' type="text" name="Inscription_Legal1_Adresse"
+                            placeholder="Adresse" id="Inscription_Legal1_Adresse" required>
                     </div>
 
                     <div class="row">
                         <div class="col form-group">
                             <label for="Inscription_Legal1_Ville" class="form-label">Ville<span
                                     class="text-danger">*</span></label>
-                            <input type="text" class="form-control" name='Inscription_Legal1_Ville' placeholder="Ville"
-                                id='Inscription_Legal1_Ville' required>
+                            <input type="text" class="form-control" name='Inscription_Legal1_Ville'
+                                placeholder="Ville" id='Inscription_Legal1_Ville' required>
                         </div>
 
                         <div class="col form-group">
@@ -415,28 +421,28 @@
 
                         <div class="col form-group">
                             <label class='form-label' for="Inscription_Legal2_Prenom">Prénom</label>
-                            <input class='form-control' type="text" name="Inscription_Legal2_Prenom" placeholder="Prenom"
-                                id="Inscription_Legal2_Prenom">
+                            <input class='form-control' type="text" name="Inscription_Legal2_Prenom"
+                                placeholder="Prenom" id="Inscription_Legal2_Prenom">
                         </div>
                     </div>
 
                     <div class='form-group'>
                         <label class="form-label" for="Inscription_Legal2_Lien">Lien de parenté</label>
-                        <input class='form-control' type="text" name="Inscription_Legal2_Lien" placeholder="Lien de parenté"
-                            id="Inscription_Legal2_Lien">
+                        <input class='form-control' type="text" name="Inscription_Legal2_Lien"
+                            placeholder="Lien de parenté" id="Inscription_Legal2_Lien">
                     </div>
 
                     <div class='form-group'>
                         <label class="form-label" for="Inscription_Legal2_Adresse">Adresse</label>
-                        <input class='form-control' type="text" name="Inscription_Legal2_Adresse" placeholder="Adresse"
-                            id="Inscription_Legal2_Adresse">
+                        <input class='form-control' type="text" name="Inscription_Legal2_Adresse"
+                            placeholder="Adresse" id="Inscription_Legal2_Adresse">
                     </div>
 
                     <div class="row">
                         <div class="col form-group">
                             <label for="Inscription_Legal2_Ville" class="form-label">Ville</label>
-                            <input type="text" class="form-control" name='Inscription_Legal2_Ville' placeholder="Ville"
-                                id='Inscription_Legal2_Ville'>
+                            <input type="text" class="form-control" name='Inscription_Legal2_Ville'
+                                placeholder="Ville" id='Inscription_Legal2_Ville'>
                         </div>
 
                         <div class="col form-group">
@@ -487,7 +493,7 @@
                                         Oui
                                     </label>
                                     <input class="form-check-input" type="radio" name="Inscription_Regime_Porc"
-                                        id="Inscription_Regime_Porc1" value='oui' >
+                                        id="Inscription_Regime_Porc1" value='oui'>
                                 </div>
                             </div>
 
@@ -497,7 +503,7 @@
                                         Non
                                     </label>
                                     <input class="form-check-input" type="radio" name="Inscription_Regime_Porc"
-                                        id="Inscription_Regime_Porc2" value='non' >
+                                        id="Inscription_Regime_Porc2" value='non'>
                                 </div>
                             </div>
                         </div>
@@ -511,8 +517,8 @@
 
                     <div class='form-group mt-2'>
                         <label class="form-label" for="Inscription_Regime_Allergie">Allergie</label>
-                        <input class="form-control" type="text" name="Inscription_Regime_Allergie" placeholder="Allergie"
-                            id="Inscription_Regime_Allergie">
+                        <input class="form-control" type="text" name="Inscription_Regime_Allergie"
+                            placeholder="Allergie" id="Inscription_Regime_Allergie">
                     </div>
 
                     <div class='form-group mt-2'>
@@ -524,7 +530,8 @@
 
                     <h3>Obligation d'assurance</h3>
 
-                    <p class="text-md-center">Conformément à la loi, l’Association BERRY-TUDY est couverte par les polices d’assurances pour les
+                    <p class="text-md-center">Conformément à la loi, l’Association BERRY-TUDY est couverte par les polices
+                        d’assurances pour les
                         biens
                         immobiliers. Toutefois, bien que votre enfant soit sous la responsabilité du directeur de la session
                         pendant le
@@ -533,46 +540,50 @@
                         enfant dans la mesure où aucune faute professionnelle n’aura été commise par le personnel
                         d’encadrement.
                         Vous êtes donc tenu d’être assuré au titre de ce dommage.
-										</p>
+                    </p>
                     <hr>
-										<h3>Informations CAF</h3>
-										<div>
-                                            <div class="form-group">
-                                                <label for="Inscription_Situation_prise_en_change_caf">Prise en charge CAF (totale ou partielle):</label>
-                                                
-                                                    <label class="radio-inline">
-                                                        <input type="radio" name="Inscription_Situation_prise_en_change_caf" value="oui"> oui	
-                                                    </label>
-                                                    <label class="radio-inline">
-                                                        <input type="radio" name="Inscription_Situation_prise_en_change_caf" value="non"> non
-                                                    </label>
-                                            </div>
-                                            <div class="prise_ok d-none">
-                                                <div class="form-group ">
-                                                        <label class='form-label' for='Inscription_Caf_Numero'>N° d'allocataire C.A.F<span
-                                                                        class="text-danger">*</span></label>
-                                                        <input  type="text" name="Inscription_Caf_Numero"
-                                                                placeholder="Numéro d'allocataire" id="Inscription_Caf_Numero">
-                                                </div>
-                                                <div class="form-group ">
-                                                        <label class='form-label' for='Inscription_Caf_ref'>Référence C.A.F<span
-                                                                        class="text-danger">*</span></label>
-                                                        <select name="Inscription_Caf_ref" id="Inscription_Caf_ref" class="form-control">
-                                                            @foreach (\App\Models\Departement::all() as $item)
-                                                            @php $selected = $item->code == 18 ? 'selected' : ''; @endphp
-                                                            <option value="{{ $item->code }}" {{ $selected }} >{{ $item->name }}</option>
-                                                            @endforeach
-                                                        </select>
-                                                </div>
+                    <h3>Informations CAF</h3>
+                    <div>
+                        <div class="form-group">
+                            <label for="Inscription_Situation_prise_en_change_caf">Prise en charge CAF (totale ou
+                                partielle):</label>
 
-                                            </div>
-											<div class="form-group">
-													<label class='form-label' for='Inscription_Caf_Ville'>Précisez la ville de votre C.A.F<span
-																	class="text-danger">*</span></label>
-													<input class="form-control" type="text" name="Inscription_Caf_Ville" placeholder="Ville"
-															id="Inscription_Caf_Ville">
-											</div>
-									</div>
+                            <label class="radio-inline">
+                                <input type="radio" name="Inscription_Situation_prise_en_change_caf" value="oui">
+                                oui
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="Inscription_Situation_prise_en_change_caf" value="non">
+                                non
+                            </label>
+                        </div>
+                        <div class="prise_ok d-none">
+                            <div class="form-group ">
+                                <label class='form-label' for='Inscription_Caf_Numero'>N° d'allocataire C.A.F<span
+                                        class="text-danger">*</span></label>
+                                <input type="text" name="Inscription_Caf_Numero" placeholder="Numéro d'allocataire"
+                                    id="Inscription_Caf_Numero">
+                            </div>
+                            <div class="form-group ">
+                                <label class='form-label' for='Inscription_Caf_ref'>Référence C.A.F<span
+                                        class="text-danger">*</span></label>
+                                <select name="Inscription_Caf_ref" id="Inscription_Caf_ref" class="form-control">
+                                    @foreach (\App\Models\Departement::all() as $item)
+                                        @php $selected = $item->code == 18 ? 'selected' : ''; @endphp
+                                        <option value="{{ $item->code }}" {{ $selected }}>{{ $item->name }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <label class='form-label' for='Inscription_Caf_Ville'>Précisez la ville de votre C.A.F<span
+                                    class="text-danger">*</span></label>
+                            <input class="form-control" type="text" name="Inscription_Caf_Ville" placeholder="Ville"
+                                id="Inscription_Caf_Ville">
+                        </div>
+                    </div>
                 </fieldset>
                 {{-- Etape 7 (Organisme d'accompagnement) --}}
                 <fieldset class="step">
@@ -588,17 +599,18 @@
                     </div>
                     <div class="form-group">
                         <label for="Inscription_Organisme_Departement" class="form-label">Département</label>
-                            <select name="Inscription_Organisme_Departement" id="Inscription_Organisme_Departement" class="form-control">
-                                @foreach (\App\Models\Departement::all() as $item)
+                        <select name="Inscription_Organisme_Departement" id="Inscription_Organisme_Departement"
+                            class="form-control">
+                            @foreach (\App\Models\Departement::all() as $item)
                                 @php $selected = $item->code == 18 ? 'selected' : ''; @endphp
-                                <option value="{{ $item->code }}" {{ $selected }} >{{ $item->name }}</option>
-                                @endforeach
-                            </select>
+                                <option value="{{ $item->code }}" {{ $selected }}>{{ $item->name }}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="Inscription_Organisme_Ville" class="form-label">Ville</label>
-                        <input type="text" class="form-control" name='Inscription_Organisme_Ville' placeholder="Ville"
-                            id='Inscription_Organisme_Ville'>
+                        <input type="text" class="form-control" name='Inscription_Organisme_Ville'
+                            placeholder="Ville" id='Inscription_Organisme_Ville'>
                     </div>
                     <div class='form-group'>
                         <label class="form-label" for="Inscription_Organisme_Nom">Nom</label>
@@ -631,16 +643,18 @@
                     <legend class='text-center fs-2'>personne à prévenir en cas d’urgence ?</legend>
                     <hr>
                     <div class="form-group">
-                     
-                            <label class="radio-inline">
-                                <input type="radio" name="Inscription_Situation_personne_acontacter" value="Legal1"> Responsable Légal 1
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="Inscription_Situation_personne_acontacter" value="Legal2"> responsable légal 2
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="Inscription_Situation_personne_acontacter" value="Autre">Autre
-                            </label>
+
+                        <label class="radio-inline">
+                            <input type="radio" name="Inscription_Situation_personne_acontacter" value="Legal1">
+                            Responsable Légal 1
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="Inscription_Situation_personne_acontacter" value="Legal2">
+                            responsable légal 2
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="Inscription_Situation_personne_acontacter" value="Autre">Autre
+                        </label>
                     </div>
                     <div class="row">
                         <div class="col form-group">
@@ -664,16 +678,16 @@
                     <div class='form-group'>
                         <label class="form-label" for="Inscription_Urgence_Adresse">Adresse<span
                                 class="text-danger">*</span></label>
-                        <input class="form-control" type="text" name="Inscription_Urgence_Adresse" placeholder="Adresse"
-                            id="Inscription_Urgence_Adresse">
+                        <input class="form-control" type="text" name="Inscription_Urgence_Adresse"
+                            placeholder="Adresse" id="Inscription_Urgence_Adresse">
                     </div>
                     <div class="row">
 
                         <div class='col form-group'>
                             <label class="form-label" for="Inscription_Urgence_Ville">Ville<span
                                     class="text-danger">*</span></label>
-                            <input class="form-control" type="text" name="Inscription_Urgence_Ville" placeholder="Ville"
-                                id="Inscription_Urgence_Ville">
+                            <input class="form-control" type="text" name="Inscription_Urgence_Ville"
+                                placeholder="Ville" id="Inscription_Urgence_Ville">
                         </div>
                         <div class='col form-group'>
                             <label class="form-label" for="Inscription_Urgence_CP">Code postal<span
@@ -774,7 +788,8 @@
                             onclick="nextPrev(-1)">Précédent</button>
                     </div>
                     <div class="col-lg-2 col-md-3 col-4 text-center">
-                        <button type="button" class='btn btn-primary' id="nextBtn" onclick="nextPrev(1)">Suivant</button>
+                        <button type="button" class='btn btn-primary' id="nextBtn"
+                            onclick="nextPrev(1)">Suivant</button>
                     </div>
                 </div>
             </form>
@@ -785,7 +800,9 @@
 @section('extra-js')
     {{-- Bootstrap datepicker --}}
     <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js'></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.fr.min.js" integrity="sha512-fx3aztaUjb4NyoD+Tso5g7R1l29bU3jnnTfNRKBiY9fdQOHzVhKJ10wEAgQ1zM/WXCzB9bnVryHD1M40775Tsw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.fr.min.js"
+        integrity="sha512-fx3aztaUjb4NyoD+Tso5g7R1l29bU3jnnTfNRKBiY9fdQOHzVhKJ10wEAgQ1zM/WXCzB9bnVryHD1M40775Tsw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     {{-- custom Js --}}
     <script type="text/javascript" src="{{ asset('assets/js/bootstrap-pincode-input.js') }}"></script>
     <script src="{{ asset('assets/js/calendrier.js') }}"></script>

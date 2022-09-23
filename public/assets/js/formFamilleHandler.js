@@ -201,11 +201,12 @@ let validateForm = {
 
 	submitHandler: function () {
 		// AJAX with file Uploading
-		let myForm = document.getElementById("inscriptionForm");
-		let formData = new FormData(myForm); //use formData for forms with files
+		let myForm = $('#inscriptionForm');
+		let formData = new FormData(myForm[0]) //use formData for forms with files
+		console.log(formData);
 		$.ajax({
 			type: "POST",
-			url: "/famille",
+			url: myForm.attr('action'),
 			data: formData,
 			dataType: "json",
 			contentType: false,
@@ -255,21 +256,21 @@ const showTab = (n) => {
 //validate the current step fields
 const validateStep = () => {
 	// This function deals with validation of the form fields
-	let x,
-		valid = true;
+	// let x,
+	// 	valid = true;
 
-	x = $("#inscriptionForm");
+	// x = $("#inscriptionForm");
 
-	x.validate(validateForm);
+	// x.validate(validateForm);
 
-	x.valid() ? (valid = true) : (valid = false);
+	// x.valid() ? (valid = true) : (valid = false);
 
-	// If the valid status is true, mark the step as finished and valid:
-	if (valid) {
-		$(".step").eq(currentStep).addClass("finish");
-	}
-	return valid; // return the valid status
-	// return true;
+	// // If the valid status is true, mark the step as finished and valid:
+	// if (valid) {
+	// 	$(".step").eq(currentStep).addClass("finish");
+	// }
+	// return valid; // return the valid status
+	return true;
 };
 
 function nextPrev(n) {

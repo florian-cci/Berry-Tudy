@@ -31,10 +31,10 @@ Route::middleware(['auth'])->group(function () {
 		return view('home');
 	})->name('home');
 	//formulaire inscription séjour enfant
-	Route::resource('enfant', EnfantController::class);
+	Route::resource('enfant', EnfantController::class)->name('*', 'enfant');
 
 	//formulaire inscription séjour famille
-	Route::resource('famille', FamilleController::class);
+	Route::resource('famille', FamilleController::class)->name('*', 'famille');
 
 	Route::get('/tarif', [FamilleController::class, 'tarif'])->name('tarif');
 

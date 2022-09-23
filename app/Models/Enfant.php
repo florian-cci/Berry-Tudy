@@ -56,7 +56,6 @@ class Enfant extends Model
 			'Inscription_Situation_Ecole',
 			'Inscription_Situation_Classe',
 			'Inscription_Situation_Frere',
-			'Inscription_Situation_Frere_Description',
 			'Inscription_Situation_Description',
 			'Inscription_Organisme_Intitule',
 			'Inscription_Organisme_Nom',
@@ -80,6 +79,10 @@ class Enfant extends Model
 			'Inscription_Urgence_Email',
 			'Inscription_Caf_Numero',
 			'Inscription_Caf_Ville',
+			'Inscription_autre_enfant',
+			'Inscription_Situation_prise_en_change_caf',
+			'inscription_frere_info',
+			'Inscription_Caf_ref',
 		];
     // protected $hidden = [];
     // protected $dates = [];
@@ -114,4 +117,26 @@ class Enfant extends Model
     | MUTATORS
     |--------------------------------------------------------------------------
     */
+	// set Inscription_Frere_Info
+	public function setInscriptionFrereInfoAttribute($value)
+	{
+		if(!empty($value)){
+			$attribute_name = "Inscription_Frere_Info";
+			$this->attributes[$attribute_name] = json_encode($value);
+		} 
+	}
+	// get Inscription_Frere_Info
+	public function getInscriptionFrereInfoAttribute($value)
+	{
+		if(!empty($value)){
+			$info= json_decode($value,true);
+			$html='';
+			$nb=(count($info)/3);
+			for ($i=1; $i <$nb ; $i++) { 
+				// saut de ligne sans br 
+				$html.='Nom : '.$info['Nom'.$i].' Age : '.$info['Age'.$i].' Participant : '.$info['Participe'.$i]."    ";
+			}
+			return $html;
+		} 
+	}
 }

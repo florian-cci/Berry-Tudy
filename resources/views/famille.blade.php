@@ -11,7 +11,7 @@
     <div class="row justify-content-center">
         <div class='col-lg-6 col-md-8 col-10'>
 
-            <form action="./inscription" method="POST" id='inscriptionForm'>
+            <form action="{{ route('famille.store') }}" method="POST" id='inscriptionForm'>
                 @csrf
                 {{-- Etape 1 (Info contact) --}}
                 <fieldset class='step'>
@@ -127,9 +127,9 @@
                                     <td>Gratuit</td>
                                     <td>Gratuit</td>
                                 </tr>
-                                
-                                
-                               
+
+
+
                             </tbody>
                         </table>
                     </div>
@@ -147,11 +147,13 @@
                                     <div class="form-check">
                                         <input class="form-check-input pensionType" type="checkbox"
                                             name="Inscription_Pension" id="Inscription_Pension_Demi" value="Demi">
-                                        <label class="form-check-label" for="Inscription_Pension_Demi">Demi-pension*</label>
+                                        <label class="form-check-label"
+                                            for="Inscription_Pension_Demi">Demi-pension*</label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input pensionType" type="checkbox"
-                                            name="Inscription_Pension" id="Inscription_Pension_Complete" value="Complete">
+                                            name="Inscription_Pension" id="Inscription_Pension_Complete"
+                                            value="Complete">
                                         <label class="form-check-label" for="Inscription_Pension_Complete">Pension
                                             complète</label>
                                     </div>
@@ -228,16 +230,16 @@
                     </div>
                     <div class="row border-bottom border-bottom-2">
                         <ul class="">
-                            <li > Service animation gratuit</li>
-                            <li > Possibilité de prendre le repas du midi pour 9
+                            <li> Service animation gratuit</li>
+                            <li> Possibilité de prendre le repas du midi pour 9
                                 €/adulte et 5 €/enfant (hors pension
                                 complète)</li>
-                            <li > Repas du midi au choix sous forme de pique-nique ou à
+                            <li> Repas du midi au choix sous forme de pique-nique ou à
                                 table</li>
-                            <li > Possibilité de demander une navette pour faire
+                            <li> Possibilité de demander une navette pour faire
                                 l’aller-retour Quimper-Ile Tudy (24 €)
                             </li>
-                            <li > Possibilité de prolonger le séjour (avant ou après), ne
+                            <li> Possibilité de prolonger le séjour (avant ou après), ne
                                 passer que quelques jours ou inviter
                                 des amis en réservant les nuitées (ci-dessus – séjour à la carte) sous réserve des places
                                 disponibles en sachent que les repas pris sur place (midi ou soir) seront facturés en fin de
@@ -256,14 +258,16 @@
                                 <th scope="col" colspan="5" class='text-center'>Séjour semaine</th>
                             </thead>
                             <thead>
-                                <th scope="col" colspan='2'>Nombre de participants<span class="text-danger">*</span></th>
+                                <th scope="col" colspan='2'>Nombre de participants<span
+                                        class="text-danger">*</span></th>
                                 <th scope="col" colspan='2'>Prix formule</th>
                                 <th scope="col">Montant</th>
                             </thead>
                             <tbody>
                                 <tr>
                                     <th>Adulte</th>
-                                    <td class='nbPers text-center'><input type='number' style="width: 30%" min=0 id='Inscription_Semaine_Demi_Adulte_nb'
+                                    <td class='nbPers text-center'><input type='number' style="width: 30%" min=0
+                                            id='Inscription_Semaine_Demi_Adulte_nb'
                                             name='Inscription_Semaine_Demi_Adulte_nb'></td>
                                     <th>X</th>
                                     <td class='price'>{{ $pensionDemi->Prix_Adulte }}</td>
@@ -271,8 +275,8 @@
                                 </tr>
                                 <tr>
                                     <th>Ados 12 à 16 ans</th>
-                                    <td class='nbPers text-center'><input type='number' style="width: 30%" min=0 id='Inscription_Semaine_Demi_Ado_nb'
-                                            name='Inscription_Semaine_Demi_Ado_nb'>
+                                    <td class='nbPers text-center'><input type='number' style="width: 30%" min=0
+                                            id='Inscription_Semaine_Demi_Ado_nb' name='Inscription_Semaine_Demi_Ado_nb'>
                                     </td>
                                     <th>X</th>
                                     <td class='price'>{{ $pensionDemi->Prix_Ado }}</td>
@@ -280,7 +284,8 @@
                                 </tr>
                                 <tr>
                                     <th>Enfant (<12 ans)</th>
-                                    <td class='nbPers text-center'><input type='number' style="width: 30%" min=0 id='Inscription_Semaine_Demi_Enfant_12_nb'
+                                    <td class='nbPers text-center'><input type='number' style="width: 30%" min=0
+                                            id='Inscription_Semaine_Demi_Enfant_12_nb'
                                             name='Inscription_Semaine_Demi_Enfant_12_nb'></td>
                                     <th>X</th>
                                     <td class='price'>{{ $pensionDemi->Prix_Enfant }}</td>
@@ -288,7 +293,8 @@
                                 </tr>
                                 <tr>
                                     <th>Enfant (<3 ans)</th>
-                                    <td class='nbPers text-center'><input type='number' style="width: 30%" min=0 id='Inscription_Semaine_Demi_Enfant_3_nb'
+                                    <td class='nbPers text-center'><input type='number' style="width: 30%" min=0
+                                            id='Inscription_Semaine_Demi_Enfant_3_nb'
                                             name='Inscription_Semaine_Demi_Enfant_3_nb'></td>
                                     <th colspan="2" class="text-center">GRATUIT</th>
                                     <td>= 0 €</td>
@@ -309,7 +315,8 @@
                                 <th scope="col" colspan="5" class='text-center'>Séjour semaine</th>
                             </thead>
                             <thead>
-                                <th scope="col" colspan='2'>Nombre de participants<span class="text-danger">*</span></th>
+                                <th scope="col" colspan='2'>Nombre de participants<span
+                                        class="text-danger">*</span></th>
                                 <th scope="col" colspan='2'>Prix formule</th>
                                 <th scope="col">Montant</th>
                             </thead>
@@ -325,7 +332,8 @@
                                 </tr>
                                 <tr>
                                     <th>Ados 12 à 16 ans</th>
-                                    <td class='nbPers text-center'><input type='number' style="width: 30%" min=0 id='Inscription_Semaine_Complete_Ado_nb'
+                                    <td class='nbPers text-center'><input type='number' style="width: 30%" min=0
+                                            id='Inscription_Semaine_Complete_Ado_nb'
                                             name='Inscription_Semaine_Complete_Ado_nb'>
                                     </td>
                                     <th>X</th>
@@ -362,15 +370,19 @@
                         <table id='Nuit' class='table table-bordered'>
                             <caption>Tableau de calcul du montant du séjour à la nuitée</caption>
                             <thead>
-                                <th scope="col" colspan="6" class='text-center'>Séjour à la carte(en fonction du nombre de
+                                <th scope="col" colspan="6" class='text-center'>Séjour à la carte(en fonction du
+                                    nombre de
                                     nuitée)</th>
                             </thead>
                             <Thead>
-                                <th scope="col" colspan="3" ><strong>Date de début</strong>: <input type="date" name="start_date" class="form-control" id="start_date"></th> 
-                                <th scope="col" colspan="3" ><strong>Date de fin</strong>: <input type="date" name="start_date" class="form-control" id="start_date"></th>
+                                <th scope="col" colspan="3"><strong>Date de début</strong>: <input type="date"
+                                        name="start_date" class="form-control" id="start_date"></th>
+                                <th scope="col" colspan="3"><strong>Date de fin</strong>: <input type="date"
+                                        name="end_date" class="form-control" id="end_date"></th>
                             </Thead>
                             <thead>
-                                <th scope="col" colspan='2'>Nombre de participants<span class="text-danger">*</span>
+                                <th scope="col" colspan='2'>Nombre de participants<span
+                                        class="text-danger">*</span>
                                 </th>
                                 <th scope="col" colspan='2'>Nombre de nuitées</th>
                                 <th scope="col">Prix nuitée</th>
@@ -379,41 +391,44 @@
                             <tbody>
                                 <tr>
                                     <th>Adulte</th>
-                                    <td class='nbPers text-center'><input type='number'style="width: 30%" min=0 id='Inscription_Nuit_Adulte_nb'
-                                            name='Inscription_Nuit_Adulte_nb'></td>
+                                    <td class='nbPers text-center'><input type='number'style="width: 30%" min=0
+                                            id='Inscription_Nuit_Adulte_nb' name='Inscription_Nuit_Adulte_nb'></td>
                                     <th>X</th>
-                                    <td class='nbNuits text-center'><input type='number' style="width: 30%" min=0 id='Inscription_Nuit_Adulte_nbNuits'
-                                            name='Inscription_Nuit_Adulte_nbNuits'></td>
+                                    <td class='nbNuits text-center'><input type='number' style="width: 30%" min=0
+                                            id='Inscription_Nuit_Adulte_nbNuits' name='Inscription_Nuit_Adulte_nbNuits'>
+                                    </td>
                                     <td class='price'>{{ $pensionNuit->Prix_Adulte }}</td>
                                     <td class="dynamicPrice">= 0 €</td>
                                 </tr>
                                 <tr>
                                     <th>Ados 12 à 16 ans</th>
-                                    <td class='nbPers text-center'><input type='number' style="width: 30%" min=0 id='Inscription_Nuit_Ado_nb'
-                                            name='Inscription_Nuit_Ado_nb'>
+                                    <td class='nbPers text-center'><input type='number' style="width: 30%" min=0
+                                            id='Inscription_Nuit_Ado_nb' name='Inscription_Nuit_Ado_nb'>
                                     </td>
                                     <th>X</th>
-                                    <td class='nbNuits text-center'><input type='number' style="width: 30%" min=0 id='Inscription_Nuit_Ado_nbNuits'
-                                            name='Inscription_Nuit_Ado_nbNuits'></td>
+                                    <td class='nbNuits text-center'><input type='number' style="width: 30%" min=0
+                                            id='Inscription_Nuit_Ado_nbNuits' name='Inscription_Nuit_Ado_nbNuits'></td>
                                     <td class='price'>{{ $pensionNuit->Prix_Ado }}</td>
                                     <td class="dynamicPrice">= 0 €</td>
                                 </tr>
                                 <tr>
                                     <th>Enfant (< 12 ans)</th>
-                                    <td class='nbPers text-center'><input type='number' style="width: 30%" min=0 id='Inscription_Nuit_Enfant_12_nb'
-                                            name='Inscription_Nuit_Enfant_12_nb'></td>
+                                    <td class='nbPers text-center'><input type='number' style="width: 30%" min=0
+                                            id='Inscription_Nuit_Enfant_12_nb' name='Inscription_Nuit_Enfant_12_nb'></td>
                                     <th>X</th>
-                                    <td class='nbNuits text-center'><input type='number' style="width: 30%" min=0 id='Inscription_Nuit_Enfant_12_nbNuits'
+                                    <td class='nbNuits text-center'><input type='number' style="width: 30%" min=0
+                                            id='Inscription_Nuit_Enfant_12_nbNuits'
                                             name='Inscription_Nuit_Enfant_12_nbNuits'></td>
                                     <td class='price'>{{ $pensionNuit->Prix_Enfant }}</td>
                                     <td class="dynamicPrice">= 0 €</td>
                                 </tr>
                                 <tr>
                                     <th>Enfant (< 3 ans)</th>
-                                    <td class='nbPers text-center'><input type='number' style="width: 30%" min=0 id='Inscription_Nuit_Enfant_3_nb'
-                                            name='Inscription_Nuit_Enfant_3_nb'></td>
+                                    <td class='nbPers text-center'><input type='number' style="width: 30%" min=0
+                                            id='Inscription_Nuit_Enfant_3_nb' name='Inscription_Nuit_Enfant_3_nb'></td>
                                     <th>X</th>
-                                    <td class='nbNuits text-center'><input type='number'style="width: 30%" min=0 id='Inscription_Nuit_Enfant_3_nbNuits'
+                                    <td class='nbNuits text-center'><input type='number'style="width: 30%" min=0
+                                            id='Inscription_Nuit_Enfant_3_nbNuits'
                                             name='Inscription_Nuit_Enfant_3_nbNuits'></td>
                                     <th class="text-center">GRATUIT</th>
                                     <td>= 0 €</td>
@@ -425,13 +440,16 @@
                                     <th> 10€</th>
                                 </tr>
                                 <tr>
-                                    <th colspan="5" class="text-end">Pourcentage de l’acompte pour chaque séjour (%)</th>
+                                    <th colspan="5" class="text-end">Pourcentage de l’acompte pour chaque séjour (%)
+                                    </th>
                                     <th> <input type='number' style="width: 30%" min=0 id='Montant_l_acompte'
-                                        name='Montant_l_acompte'></th>
+                                            name='Montant_l_acompte'></th>
                                 </tr>
                                 <tr>
-                                    <th colspan="5" class="text-end">Souhaitez-vous être pris en charge à votre arrivée à Quimper (+25€)</th>
-                                    <th> <input type="checkbox" name="pris-charge-Quimper" id="pris-charge-Quimper" value="oui"></th>
+                                    <th colspan="5" class="text-end">Souhaitez-vous être pris en charge à votre arrivée
+                                        à Quimper (+25€)</th>
+                                    <th> <input type="checkbox" name="pris-charge-Quimper" id="pris-charge-Quimper"
+                                            value="oui"></th>
                                 </tr>
                                 <tr>
                                     <th colspan="5" class="text-end">Total B :</th>
@@ -454,7 +472,8 @@
                             onclick="nextPrev(-1)">Précédent</button>
                     </div>
                     <div class="col-lg-2 col-md-3 col-4 text-center">
-                        <button type="button" class='btn btn-primary' id="nextBtn" onclick="nextPrev(1)">Suivant</button>
+                        <button type="button" class='btn btn-primary' id="nextBtn"
+                            onclick="nextPrev(1)">Suivant</button>
                     </div>
                 </div>
             </form>
@@ -468,11 +487,11 @@
     {{-- custom Js --}}
     <script src="./assets/js/formFamilleHandler.js"></script>
     <script>
-        $('.pensionType').change(function () {
+        $('.pensionType').change(function() {
             console.log(this.value);
-            window.open('{{ route("tarif") }}','_blank');
+            window.open('{{ route('tarif') }}', '_blank');
         });
-         $('#pris-charge-Quimper').change(function () {
+        $('#pris-charge-Quimper').change(function() {
             // get is checked
             var isChecked = $(this).is(':checked');
             // get the total
@@ -486,6 +505,5 @@
             // set the total
             $('#total').text(total);
         });
-
     </script>
 @endsection

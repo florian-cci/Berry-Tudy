@@ -433,12 +433,12 @@ let validateForm = {
 
 	submitHandler: function () {
 		// AJAX with Image Uploading
-		let myForm = document.getElementById("inscriptionForm");
-		let formData = new FormData(myForm); //use formData for forms with files
-
+		let myForm = $('#inscriptionForm');
+		let formData = new FormData(myForm[0]); //use formData for forms with files
+		
 		$.ajax({
 			type: "POST",
-			url: "/enfant",
+			url: myForm.attr('action'),
 			data: formData,
 			dataType: "json",
 			contentType: false,
@@ -597,13 +597,13 @@ $('#Inscription_Situation_frere_soeur').on('input', function () {
 			<div class="col-md-4">
 				<div class="form-group">
 					<label for="Inscription_Situation_Frere_Nom${i}">Nom & Prénom</label>
-					<input type="text" name="Inscription[Situation][Frere][Nom${i}]" id="Inscription_Situation_Frere_Nom${i}" class="form-control" required>
+					<input type="text" name="inscription_frere_info[Nom${i}]" id="Inscription_Situation_Frere_Nom${i}" class="form-control" required>
 				</div>
 			</div>
 			<div class="col-md-4">
 				<div class="form-group">
 					<label for="Inscription_Situation_Frere_Age${i}">Age</label>
-					<input type="number" name="Inscription[Situation][Frere][Age${i}]" id="Inscription_Situation_Frere_Age${i}" class="form-control" required>
+					<input type="number" name="inscription_frere_info[Age${i}]" id="Inscription_Situation_Frere_Age${i}" class="form-control" required>
 				</div>
 			</div>
 			<div class="col-md-4">
@@ -611,10 +611,10 @@ $('#Inscription_Situation_frere_soeur').on('input', function () {
 					<label for="Inscription_Situation_Frere_Participe${i}">participe au séjour à berry?</label>
 					<div class="form-check pt-2">
 						<label class="radio-inline">
-							<input type="radio" name="Inscription[Situation][Frere][Participe${i}]" value="oui"> oui	
+							<input type="radio" name="inscription_frere_info[Participe${i}]" value="oui"> oui	
 						</label>
 						<label class="radio-inline">
-							<input type="radio" name="Inscription[Situation][Frere][Participe${i}]" value="non"> non
+							<input type="radio" name="inscription_frere_info[Participe${i}]" value="non"> non
 						</label>
 					</div>
 				</div>

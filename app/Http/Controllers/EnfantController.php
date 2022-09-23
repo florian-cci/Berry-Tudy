@@ -36,13 +36,14 @@ class EnfantController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created resource in storage. EnfantRequest
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(EnfantRequest $request)
+    public function store(Request $request)
     {
+		
       $inscription = Enfant::create([
 				'Inscription_User_ID' => $request->input('Inscription_User_ID'),
 				//etape 1
@@ -59,6 +60,7 @@ class EnfantController extends Controller
 				'Inscription_Sejour_ID' => $request->input('Inscription_Sejour_ID'),
 				'Inscription_Ville_Depart_ID' => $request->input('Inscription_Ville_Depart_ID'),
 				'Inscription_Groupe' => $request->input('Inscription_Groupe'),
+				'inscription_frere_info' => $request->input('inscription_frere_info'),
 				//etape 3
 				'Inscription_Legal1_Lien' => $request->input('Inscription_Legal1_Lien'),
 				'Inscription_Legal1_Nom' => $request->input('Inscription_Legal1_Nom'),
@@ -70,6 +72,7 @@ class EnfantController extends Controller
 				'Inscription_Legal1_Portable' => $request->input('Inscription_Legal1_Portable'),
 				'Inscription_Legal1_Email' => $request->input('Inscription_Legal1_Email'),
 				'Inscription_Legal1_Employeur' => $request->input('Inscription_Legal1_Employeur'),
+				'Inscription_autre_enfant' => $request->input('Inscription_autre_enfant'),
 				//etape 4
 				'Inscription_Legal2_Lien' => $request->input('Inscription_Legal2_Lien'),
 				'Inscription_Legal2_Nom' => $request->input('Inscription_Legal2_Nom'),
@@ -85,8 +88,9 @@ class EnfantController extends Controller
 				'Inscription_Situation_Ecole' => $request->input('Inscription_Situation_Ecole'),
 				'Inscription_Situation_Classe' => $request->input('Inscription_Situation_Classe'),
 				'Inscription_Situation_Frere' => $request->input('Inscription_Situation_Frere'),
-				'Inscription_Situation_Frere_Description' => $request->input('Inscription_Situation_Frere_Description'),
 				'Inscription_Situation_Description' => $request->input('Inscription_Situation_Description'),
+				'Inscription_Situation_prise_en_change_caf' => $request->input('Inscription_Situation_prise_en_change_caf'),
+				'Inscription_Caf_ref' => $request->input('Inscription_Caf_ref'),
 				//etape 6
 				'Inscription_Organisme_Intitule' => $request->input('Inscription_Organisme_Intitule'),
 				'Inscription_Organisme_Nom' => $request->input('Inscription_Organisme_Nom'),

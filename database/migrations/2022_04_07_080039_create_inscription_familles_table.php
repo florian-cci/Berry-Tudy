@@ -26,6 +26,8 @@ class CreateInscriptionFamillesTable extends Migration
 						$table->string('Inscription_Email');
 						$table->string('Inscription_Pension')->nullable();
 						$table->string('Inscription_Nuit')->nullable();
+						$table->string('date_debut')->nullable();
+						$table->string('date_fin')->nullable();
 						$table->integer('Inscription_Semaine_Demi_Adulte_nb')->nullable();
 						$table->integer('Inscription_Semaine_Demi_Ado_nb')->nullable();
 						$table->integer('Inscription_Semaine_Demi_Enfant_12_nb')->nullable();

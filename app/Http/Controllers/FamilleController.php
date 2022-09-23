@@ -53,7 +53,7 @@ class FamilleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(FamilleRequest $request)
+    public function store(Request $request)
     {
 			$dates = $request->input('Inscription_Nuit');
 			$Inscription_Nuit = [];
@@ -97,6 +97,8 @@ class FamilleController extends Controller
 				'Inscription_Montant_A' => $request->input('Inscription_Montant_A'),
 				'Inscription_Montant_B' => $request->input('Inscription_Montant_B'),
 				'Inscription_Montant_Total' => $request->input('Inscription_Montant_Total'),
+				'date_debut' => $request->input('start_date'),
+				'date_fin' => $request->input('end_date'),
 			]);
 
 			return response()->json(['msg' => 'success']);

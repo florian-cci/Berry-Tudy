@@ -51,6 +51,8 @@ class Famille extends Model
 			'Inscription_Montant_A',
 			'Inscription_Montant_B',
 			'Inscription_Montant_Total',
+			'start_date',
+			'end_date',
 			];
     // protected $hidden = [];
     // protected $dates = [];
