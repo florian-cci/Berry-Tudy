@@ -10,7 +10,6 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\FamilleRequest;
-use Sebastienheyd\Systempay\Systempay;
 
 class FamilleController extends Controller
 {
@@ -104,9 +103,9 @@ class FamilleController extends Controller
 				'date_fin' => $request->input('end_date'),
 			]);
             $transaction=Transaction::create([
-				'Inscription_id' => $inscription->Inscription_ID,
+				'inscription_id' => $inscription->Inscription_ID,
 				"user_id"=> Auth::user()->id,
-                'montant'=>$inscription->Inscription_Montant_Total,
+                'amount'=>$inscription->Inscription_Montant_Total,
                 'uuid'=>Str::uuid(),
                 'reference'=>strtoupper(Str::random(10)),
                 'type'=>'famille',
@@ -114,12 +113,9 @@ class FamilleController extends Controller
                 'currency'=>'eur',
 				
 			]);
-            $systemPay = Systempay::set([
-                'amount' => $transaction->amount,
-                'trans_id' => $transaction->uuid
-            ]);
-            dd($systemPay);
-			return response()->json(['msg' => 'success','payment_url'=>$systemPay,'reference'=>$transaction->reference]);
+            
+			return response()->json(['msg' => 'success','payment_url'=>route('payment',$transaction->uuid)]);
+    
     }
 
     /**

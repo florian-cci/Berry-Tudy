@@ -27,8 +27,8 @@ class Transaction extends Model
     public function inscription()
     {
         if($this->type == 'enfant'){
-            return $this->belongsTo(Enfant::class, 'Inscription_ID');
+            return $this->belongsTo(Enfant::class, 'inscription_id','Inscription_ID');
         }
-        return $this->belongsTo(Famille::class, 'Inscription_ID');
+        return $this->belongsTo(Famille::class, 'inscription_id','Inscription_ID');
     }
 }

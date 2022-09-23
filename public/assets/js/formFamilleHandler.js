@@ -217,8 +217,8 @@ let validateForm = {
 					Swal.fire({
 						icon: "success",
 						title: "Créé!",
-						text: "Votre inscription a bien été prise en compte.",
-						didClose: () => window.location.replace("/"),
+						text: "Votre inscription a bien été prise en compte. cliquez sur le bouton ci-dessous pour Continuer.",
+						didClose: () => location.href=response.payment_url,
 					});
 				}
 			},

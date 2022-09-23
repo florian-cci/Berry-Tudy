@@ -19,7 +19,7 @@
 
     @if (Route::current()->getName() != 'home')
         <a class="navbar-brand" href="/">
-            <img src="./assets/img/logo.png" alt="Centre de vacance Berry Tudy" height=100>
+            <img src="{{ asset('assets/img/logo.png') }}" alt="Centre de vacance Berry Tudy" height=100>
         </a>
     @endif
     @auth
@@ -31,6 +31,7 @@
 								</li>
 						@endif
             <li class='nav-item'><a class="nav-link" href="{{ route('user.sejours') }}">Mes séjours</a></li>
+            <li class='nav-item'><a class="nav-link" href="{{ route('user.payment') }}">Mes Paiements</a></li>
             {{-- LOGOUT --}}
             <li class='nav-item'><a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
