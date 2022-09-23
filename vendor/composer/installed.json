@@ -6575,6 +6575,71 @@
             "install-path": "../sebastian/version"
         },
         {
+            "name": "sebastienheyd/laravel-systempay",
+            "version": "1.2.1",
+            "version_normalized": "1.2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastienheyd/laravel-systempay.git",
+                "reference": "5c0e892ad2c43f48e6299791917645ed871a7be1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastienheyd/laravel-systempay/zipball/5c0e892ad2c43f48e6299791917645ed871a7be1",
+                "reference": "5c0e892ad2c43f48e6299791917645ed871a7be1",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": ">=5.7",
+                "php": ">=7.2.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": ">=3.8",
+                "phpunit/phpunit": "^8.0",
+                "squizlabs/php_codesniffer": "^3.0"
+            },
+            "time": "2020-09-29T06:47:23+00:00",
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Sebastienheyd\\Systempay\\SystempayServiceProvider"
+                    ],
+                    "aliases": {
+                        "Systempay": "Sebastienheyd\\Systempay\\Facade"
+                    }
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Sebastienheyd\\Systempay\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sébastien HEYD",
+                    "email": "contact@sheyd.fr"
+                }
+            ],
+            "description": "Systempay (Banque Populaire) form generator for Laravel",
+            "keywords": [
+                "gateway",
+                "laravel",
+                "pay",
+                "payment"
+            ],
+            "support": {
+                "issues": "https://github.com/sebastienheyd/laravel-systempay/issues",
+                "source": "https://github.com/sebastienheyd/laravel-systempay/tree/1.2.1"
+            },
+            "install-path": "../sebastienheyd/laravel-systempay"
+        },
+        {
             "name": "swiftmailer/swiftmailer",
             "version": "v6.3.0",
             "version_normalized": "6.3.0.0",

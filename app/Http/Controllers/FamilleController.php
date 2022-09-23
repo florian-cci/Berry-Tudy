@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Sejour;
-use App\Models\Pension;
-use Illuminate\Http\Request;
 use App\Models\Famille;
+use App\Models\Pension;
+use App\Models\Transaction;
+use Illuminate\Support\Str;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\FamilleRequest;
+use Sebastienheyd\Systempay\Systempay;
 
 class FamilleController extends Controller
 {
@@ -100,8 +103,23 @@ class FamilleController extends Controller
 				'date_debut' => $request->input('start_date'),
 				'date_fin' => $request->input('end_date'),
 			]);
-
-			return response()->json(['msg' => 'success']);
+            $transaction=Transaction::create([
+				'Inscription_id' => $inscription->Inscription_ID,
+				"user_id"=> Auth::user()->id,
+                'montant'=>$inscription->Inscription_Montant_Total,
+                'uuid'=>Str::uuid(),
+                'reference'=>strtoupper(Str::random(10)),
+                'type'=>'famille',
+                'status'=>'pending',
+                'currency'=>'eur',
+				
+			]);
+            $systemPay = Systempay::set([
+                'amount' => $transaction->amount,
+                'trans_id' => $transaction->uuid
+            ]);
+            dd($systemPay);
+			return response()->json(['msg' => 'success','payment_url'=>$systemPay,'reference'=>$transaction->reference]);
     }
 
     /**

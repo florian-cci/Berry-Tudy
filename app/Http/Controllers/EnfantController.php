@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Ville;
-use App\Models\Sejour;
-use Illuminate\Http\Request;
 use App\Models\Enfant;
+use App\Models\Sejour;
+use App\Models\Transaction;
+use Illuminate\Http\Request;
 use App\Http\Requests\EnfantRequest;
 use Illuminate\Support\Facades\Auth;
 
@@ -117,7 +118,7 @@ class EnfantController extends Controller
 				'Inscription_Caf_Numero' => $request->input('Inscription_Caf_Numero'),
 				'Inscription_Caf_Ville' => $request->input('Inscription_Caf_Ville'),
 			]);
-
+			
 			return response()->json(['msg' => 'success']);
     }
 
