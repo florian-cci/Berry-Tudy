@@ -1,9 +1,11 @@
 .step {
 	display: none;
 }
-input[type="number"]{
+
+input[type="number"] {
 	width: 15vw;
 }
+
 /* .navbar {
 	height: 100px;
 } */
@@ -11,21 +13,39 @@ input[type="number"]{
 .sexlabel {
 	margin-left: -207px;
 }
+
 @media screen and(max-width: 975px) {
 	.sexlabel {
 		margin-left: -218px;
 	}
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 1200px) {
 	.sexlabel {
 		margin-left: -247px;
 	}
 }
 
-@media all and (max-device-width: 480px)
-{
-    .sexlabel {
+@media all and (max-device-width: 480px) {
+	.sexlabel {
 		margin-left: -207px;
+	}
+}
+
+@media only screen and (min-width: 992px) {
+	.sexlabel {
+		margin-left: -218px;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.sexlabel {
+		margin-left: -118px;
+	}
+}
+
+@media only screen and (min-width: 600px) {
+	.sexlabel {
+		margin-left: -100px;
 	}
 }
