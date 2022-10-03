@@ -12,7 +12,7 @@
 		crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Additional CSS Files -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css?v'.time()) }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css?v='.time()) }}" />
 
     @yield('extra-css')
 </head>
