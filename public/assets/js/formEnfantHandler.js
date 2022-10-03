@@ -632,6 +632,18 @@ $('#Inscription_Situation_frere_soeur').on('input', function () {
 
 });
 
+$('#Inscription_Legal1_Nom').on('input', function () {
+	$('#Inscription_Legal2_Nom').val($(this).val());
+});
+$('#Inscription_Legal1_Prenom').on('input', function () {
+	$('#Inscription_Legal2_Prenom').val($(this).val());
+});
+$('#Inscription_Legal1_Lien').on('input', function () {
+	$('#Inscription_Legal2_Lien').val($(this).val());
+});
+$('#Inscription_Legal1_Email').on('input', function () {
+	$('#Inscription_Legal1_Email').val($(this).val());
+});
 $('#Inscription_Legal1_Adresse').on('input', function () {
 	$('#Inscription_Legal2_Adresse').val($(this).val());
 });
@@ -642,9 +654,13 @@ $('#Inscription_Legal1_CodePostal').on('input', function () {
 	$('#Inscription_Legal2_CodePostal').val($(this).val());
 });
 $('#Inscription_Legal1_Fixe').on('input', function () {
+	validateForm.rules.Inscription_Legal1_Fixe = { required: false };
+	validateForm.rules.Inscription_Legal2_Fixe = { required: false };
 	$('#Inscription_Legal2_Fixe').val($(this).val());
 });
 $('#Inscription_Legal1_Portable').on('input', function () {
+	validateForm.rules.Inscription_Legal1_Portable = { required: false };
+	validateForm.rules.Inscription_Legal2_Portable = { required: false };
 	$('#Inscription_Legal1_Portable').val($(this).val());
 });
 $('#Inscription_Caf_Numero').pincodeInput({hidedigits: false, inputs: 7});

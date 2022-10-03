@@ -11,7 +11,7 @@ input[type="number"]{
 .sexlabel {
 	margin-left: -207px;
 }
-@media(max-width: 975px) {
+@media screen and(max-width: 975px) {
 	.sexlabel {
 		margin-left: -207px;
 	}
@@ -19,6 +19,6 @@ input[type="number"]{
 
 @media screen and (min-width: 1024px) {
 	.sexlabel {
-		margin-left: -295px;
+		margin-left: -247px;
 	}
 }

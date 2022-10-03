@@ -779,6 +779,16 @@
                                 </div>
                             </div>
                         </div>
+                        <div class='col form-group'>
+                            <label class='form-label' for="Inscription_Montant_Sejour">Montant Séjour</label>
+                            <input class='form-control' type='text' name="Inscription_Montant_Sejour"
+                                placeholder="Montant Acompte" id="Inscription_Montant_Sejour" required>
+                        </div>
+                        <div class='col form-group'>
+                            <label class='form-label' for="Inscription_Montant_Acompte">Montant Acompte</label>
+                            <input class='form-control' type='text' name="Inscription_Montant_Acompte"
+                                placeholder="Montant Séjour" id="Inscription_Montant_Acompte" required>
+                        </div>
                     </div>
                 </fieldset>
 
