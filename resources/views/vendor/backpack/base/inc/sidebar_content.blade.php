@@ -6,11 +6,5 @@
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('pension') }}'><i class='nav-icon la la-bed'></i> Pensions</a></li>
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('ville') }}'><i class='nav-icon la la-building'></i> Villes</a></li>
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('user') }}'><i class='nav-icon la la-user'></i> Utilisateurs</a></li>
-
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('departement') }}'><i class='nav-icon la la-question'></i> Departements</a></li>
-<li class='nav-item'><a class='nav-link' href='{{ backpack_url('enfant') }}'><i class='nav-icon la la-question'></i> Enfants</a></li>
-<li class='nav-item'><a class='nav-link' href='{{ backpack_url('famille') }}'><i class='nav-icon la la-question'></i> Familles</a></li>
-<li class='nav-item'><a class='nav-link' href='{{ backpack_url('pension') }}'><i class='nav-icon la la-question'></i> Pensions</a></li>
-<li class='nav-item'><a class='nav-link' href='{{ backpack_url('sejour') }}'><i class='nav-icon la la-question'></i> Sejours</a></li>
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('transaction') }}'><i class='nav-icon la la-question'></i> Transactions</a></li>
-<li class='nav-item'><a class='nav-link' href='{{ backpack_url('ville') }}'><i class='nav-icon la la-question'></i> Villes</a></li>
