@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use PDF;
 use App\Models\Enfant;
+use App\Models\Famille;
 use Illuminate\Http\Request;
 
 class PDFController extends Controller
@@ -13,6 +14,9 @@ class PDFController extends Controller
     {
         if($type=="enfant"){
             $info = Enfant::find($id);
+        }
+        elseif ($type=="famille") {
+            $info = Famille::find($id);
         }
         $data = [
             'title' => $title,
