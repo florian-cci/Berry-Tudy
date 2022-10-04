@@ -46,6 +46,6 @@ Route::middleware(['auth'])->group(function () {
 	
 });
 Route::get('/payment/callback', [PaymentController::class, 'callback'])->name('payment.callback');
-Route::get('generate-pdf/{title}', [PDFController::class, 'generatePDF'])->name('pfd');
+Route::get('generate-pdf/{title}/{type}/{id}', [PDFController::class, 'generatePDF'])->name('pfd');
 
 require __DIR__.'/auth.php';
