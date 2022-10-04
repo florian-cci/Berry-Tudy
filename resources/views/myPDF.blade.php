@@ -4,8 +4,8 @@
     <title>Hi</title>
 </head>
 <body>
-    <h1>{{ $title }}</h1>
-    <table align="center" border="0" cellpadding="0" cellspacing="0" style="height:202px; width:522px">
+    <h1 align="center">{{ $title }}</h1>
+    <table align="center" border="0" cellpadding="0" cellspacing="0" style="width:100%">
         @foreach ($info as $item=>$value)
             @if ($item!="Inscription_User_ID")
                 <tr>
