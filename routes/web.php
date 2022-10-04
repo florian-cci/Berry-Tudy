@@ -2,16 +2,11 @@
 
 use Whoops\Run;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PDFController;
 use App\Http\Controllers\EnfantController;
 use App\Http\Controllers\SejourController;
 use App\Http\Controllers\FamilleController;
 use App\Http\Controllers\PaymentController;
-use App\Http\Controllers\Admin\UserController as AdminUserController;
-use App\Http\Controllers\Admin\VilleController as AdminVilleController;
-use App\Http\Controllers\Admin\EnfantController as AdminEnfantController;
-use App\Http\Controllers\Admin\SejourController as AdminSejourController;
-use App\Http\Controllers\Admin\FamilleController as AdminFamilleController;
-use App\Http\Controllers\Admin\PensionController as AdminPensionController;
 
 /*
 |--------------------------------------------------------------------------
