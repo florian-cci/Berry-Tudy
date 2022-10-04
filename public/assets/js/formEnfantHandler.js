@@ -654,13 +654,13 @@ $('#Inscription_Legal1_CP').on('input', function () {
 	$('#Inscription_Legal2_CP').val($(this).val());
 });
 $('#Inscription_Legal1_Fixe').on('input', function () {
-	validateForm.rules.Inscription_Legal1_Fixe = { required: false };
-	validateForm.rules.Inscription_Legal2_Fixe = { required: false };
+	validateForm.rules.Inscription_Legal1_Fixe.required =false;
+	validateForm.rules.Inscription_Legal2_Fixe.required =false;
 	$('#Inscription_Legal2_Fixe').val($(this).val());
 });
 $('#Inscription_Legal1_Portable').on('input', function () {
-	validateForm.rules.Inscription_Legal1_Portable = { required: false };
-	validateForm.rules.Inscription_Legal2_Portable = { required: false };
+	validateForm.rules.Inscription_Legal1_Portable.required =false;
+	validateForm.rules.Inscription_Legal2_Portable.required =false;
 	$('#Inscription_Legal2_Portable').val($(this).val());
 });
 $('#Inscription_Caf_Numero').pincodeInput({hidedigits: false, inputs: 7});

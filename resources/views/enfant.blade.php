@@ -817,5 +817,5 @@
     {{-- custom Js --}}
     <script type="text/javascript" src="{{ asset('assets/js/bootstrap-pincode-input.js') }}"></script>
     <script src="{{ asset('assets/js/calendrier.js') }}"></script>
-    <script src="{{ asset('assets/js/formEnfantHandler.js') }}"></script>
+    <script src="{{ asset('assets/js/formEnfantHandler.js?v='.time()) }}"></script>
 @endsection

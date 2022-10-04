@@ -485,7 +485,7 @@
     {{-- Bootstrap datepicker --}}
     <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js'></script>
     {{-- custom Js --}}
-    <script src="./assets/js/formFamilleHandler.js"></script>
+    <script src="{{ asset('assets/js/formFamilleHandler.js?v='.time()) }}"></script>
     <script>
         $('.pensionType').change(function() {
             console.log(this.value);
