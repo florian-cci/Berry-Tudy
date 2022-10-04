@@ -24,7 +24,7 @@ class PDFController extends Controller
         ];
           
         $pdf = PDF::loadView('myPDF', $data);
-        $name=$title."_".$id.".pdf";
+        $name=$title."_".date('d_m_Y_H_i_').$id.".pdf";
         return $pdf->download($name.'.pdf');
     }
 }
