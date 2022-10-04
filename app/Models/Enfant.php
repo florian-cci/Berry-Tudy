@@ -142,6 +142,6 @@ class Enfant extends Model
 
 	public function openPdf($crud = false)
     {
-        return '<a class="btn btn-xs btn-default" target="_blank" href="'.url("/generate-pdf/Info sur l'enfant/enfant/".$this->id ).'" data-toggle="tooltip" title="Télécharger"><i class="fa fa-download"></i> pdf</a>';
+        return '<a class="" target="_blank" href="'.url("/generate-pdf/Info sur l'enfant/enfant/".$this->Inscription_ID ).'" data-toggle="tooltip" title="Télécharger"><i class="la la-download"></i> pdf</a>';
     }
 }
