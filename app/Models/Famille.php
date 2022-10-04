@@ -88,6 +88,6 @@ class Famille extends Model
     */
     public function openPdf($crud = false)
     {
-        return '<a class="btn btn-xs btn-default" target="_blank" href="'.route('pfd',['title'=>"Info sur la famille",'type'=>'famille','id'=>$this->id] ).'" data-toggle="tooltip" title="Télécharger"><i class="fa fa-download"></i> pdf</a>';
+        return '<a class="btn btn-xs btn-default" target="_blank" href="'.url('/generate-pdf/Info sur la famille/famille/'.$this->id ).'" data-toggle="tooltip" title="Télécharger"><i class="fa fa-download"></i> pdf</a>';
     }
 }
