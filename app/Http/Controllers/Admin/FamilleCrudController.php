@@ -48,6 +48,7 @@ class FamilleCrudController extends CrudController
 				CRUD::column('Inscription_Portable')->label('Portable');
 				CRUD::column('Inscription_Email')->label('Email');
 				CRUD::column('Inscription_Montant_Total')->label('Montant total');
+                $this->crud->addButtonFromModelFunction('line', 'open_pdf', 'openPdf', 'beginning');
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:

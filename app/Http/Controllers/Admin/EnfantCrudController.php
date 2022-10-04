@@ -48,7 +48,7 @@ class EnfantCrudController extends CrudController
 			CRUD::column('Inscription_Adresse')->label('Adresse');
 			CRUD::column('Inscription_CP')->label('Code postal');
 			CRUD::column('Inscription_Ville')->label('Ville');
-
+            $this->crud->addButtonFromModelFunction('line', 'open_pdf', 'openPdf', 'beginning');
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');

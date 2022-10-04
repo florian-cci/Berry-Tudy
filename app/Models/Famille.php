@@ -86,4 +86,8 @@ class Famille extends Model
     | MUTATORS
     |--------------------------------------------------------------------------
     */
+    public function openPdf($crud = false)
+    {
+        return '<a class="btn btn-xs btn-default" target="_blank" href="'.route('pfd',["Info sur la famille",'famille',$this->id] ).'" data-toggle="tooltip" title="Télécharger"><i class="fa fa-download"></i> pdf</a>';
+    }
 }

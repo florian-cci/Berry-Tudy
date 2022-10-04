@@ -139,4 +139,9 @@ class Enfant extends Model
 			return $html;
 		} 
 	}
+
+	public function openPdf($crud = false)
+    {
+        return '<a class="btn btn-xs btn-default" target="_blank" href="'.route('pfd',["Info sur l'enfant",'enfant',$this->id] ).'" data-toggle="tooltip" title="Télécharger"><i class="fa fa-download"></i> pdf</a>';
+    }
 }
