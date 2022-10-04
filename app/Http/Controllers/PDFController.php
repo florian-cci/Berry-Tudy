@@ -13,10 +13,10 @@ class PDFController extends Controller
  
     {
         if($type=="enfant"){
-            $info = Enfant::where('Inscription_ID',$id)->first();
+            $info = Enfant::where('Inscription_ID',$id)->first()->toArray();
         }
         elseif ($type=="famille") {
-            $info = Famille::where('Inscription_ID',$id)->first();
+            $info = Famille::where('Inscription_ID',$id)->first()->toArray();
         }
         $data = [
             'title' => $title,
