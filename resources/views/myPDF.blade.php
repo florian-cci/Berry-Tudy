@@ -9,7 +9,7 @@
         @foreach ($info as $item=>$value)
             @if ($item!="Inscription_User_ID" && $item!="created_at" && $item!="updated_at" && $item!="deleted_at")
                 <tr>
-                    <td>{{  ucfirst(str_replace(['Inscription_Legal1','Inscription_Legal2','_','Inscription'],[' ','Responsable légal 1','Responsable légal 2',' '],$item) )}}</td>
+                    <td>{{  ucfirst(str_replace(['Inscription_Legal1','Inscription_Legal2','_','Inscription'],['Responsable légal 1','Responsable légal 2',' ',' '],$item) )}}</td>
                     <td>{{ $value }}</td>
                 </tr>
             @endif
