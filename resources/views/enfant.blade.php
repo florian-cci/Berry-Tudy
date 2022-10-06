@@ -382,14 +382,14 @@
                         <label class="form-label" for="Inscription_Legal1_Fixe">Téléphone fixe<span
                                 class="text-danger">*</span></label>
                         <input class="form-control" type="text" name="Inscription_Legal1_Fixe"
-                            placeholder="Téléphone fixe" id="Inscription_Legal1_Fixe" required>
+                            placeholder="Téléphone fixe" id="Inscription_Legal1_Fixe" >
                     </div>
 
                     <div class='form-group'>
                         <label class="form-label" for="Inscription_Legal1_Portable">Téléphone portable<span
                                 class="text-danger">*</span></label>
                         <input class="form-control" type="text" name="Inscription_Legal1_Portable"
-                            placeholder="Téléphone portable" id="Inscription_Legal1_Portable" required>
+                            placeholder="Téléphone portable" id="Inscription_Legal1_Portable" >
                     </div>
 
                     <div class='form-group'>
