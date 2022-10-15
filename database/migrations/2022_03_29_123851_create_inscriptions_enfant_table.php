@@ -78,6 +78,7 @@ class CreateInscriptionsEnfantTable extends Migration
 						$table->string('Inscription_Caf_ref', 220)->nullable();
 						$table->string('Inscription_Caf_Ville', 220)->nullable();
             $table->timestamps();
+			
         });
     }
 
