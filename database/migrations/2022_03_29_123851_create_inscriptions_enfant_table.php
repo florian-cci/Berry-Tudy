@@ -53,7 +53,7 @@ class CreateInscriptionsEnfantTable extends Migration
 						$table->enum('Inscription_Situation_Frere', ['oui', 'non'])->default('non');
 						$table->enum('Inscription_Situation_prise_en_change_caf', ['oui', 'non'])->default('non')->nullable();
 						$table->integer('Inscription_Situation_frere_soeur')->nullable();
-						$table->json('inscription_frere_info')->nullable();
+						$table->longText('inscription_frere_info')->nullable();
 						$table->text('Inscription_Situation_Description')->nullable();
 						$table->string('Inscription_Organisme_Intitule', 220)->nullable();
 						$table->string('Inscription_Organisme_Nom', 220)->nullable();

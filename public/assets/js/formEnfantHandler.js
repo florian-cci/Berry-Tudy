@@ -653,15 +653,29 @@ $('#Inscription_Legal1_Ville').on('input', function () {
 $('#Inscription_Legal1_CP').on('input', function () {
 	$('#Inscription_Legal2_CP').val($(this).val());
 });
+$('#Inscription_Urgence_Fixe').on('input', function () {
+	$('#Inscription_Urgence_Portable').rules('remove', 'required');
+		$('#Inscription_Urgence_Pro').rules('remove', 'required');
+});
+$('#Inscription_Urgence_Portable').on('input', function () {
+	$('#Inscription_Urgence_Fixe').rules('remove', 'required');
+			$('#Inscription_Urgence_Pro').rules('remove', 'required');
+});
+
+$('#Inscription_Urgence_Pro').on('input', function () {
+	$('#Inscription_Urgence_Fixe').rules('remove', 'required');
+	$('#Inscription_Urgence_Portable').rules('remove', 'required');
+});
 $('#Inscription_Legal1_Fixe').on('input', function () {
-	validateForm.rules.Inscription_Legal1_Fixe.required =false;
-	validateForm.rules.Inscription_Legal2_Fixe.required =false;
+	$('#Inscription_Legal1_Portable').rules('remove', 'required');
+	$('#Inscription_Legal2_Portable').rules('remove', 'required');
 	$('#Inscription_Legal2_Fixe').val($(this).val());
 });
 $('#Inscription_Legal1_Portable').on('input', function () {
-	validateForm.rules.Inscription_Legal1_Portable.required =false;
-	validateForm.rules.Inscription_Legal2_Portable.required =false;
-	$('#Inscription_Legal2_Portable').val($(this).val());
+    console.log($(this).val())
+    	$('#Inscription_Legal2_Portable').val($(this).val());
+	$('#Inscription_Legal1_Fixe').rules('remove', 'required');
+$('#Inscription_Legal2_Fixe').rules('remove', 'required');
 });
 $('#Inscription_Caf_Numero').pincodeInput({hidedigits: false, inputs: 7});
 $('input[type=radio][name=Inscription_Situation_prise_en_change_caf]').change(function () {
@@ -683,6 +697,8 @@ $('input[type=radio][name=Inscription_Situation_personne_acontacter]').change(fu
 		$('#Inscription_Urgence_CP').val($("#Inscription_"+val+"_CP").val());
 		$('#Inscription_Urgence_Fixe').val($("#Inscription_"+val+"_Fixe").val());
 		$('#Inscription_Urgence_Portable').val($("#Inscription_"+val+"_Portable").val());
+			$('#Inscription_Urgence_Fixe').rules('remove', 'required');
+	$('#Inscription_Urgence_Portable').rules('remove', 'required');
 
 	} else {
 		$('#Inscription_Urgence_Nom').val('');
